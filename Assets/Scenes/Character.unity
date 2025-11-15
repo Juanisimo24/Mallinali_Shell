@@ -2847,7 +2847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870965153}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3104,7 +3104,7 @@ MonoBehaviour:
   attackRange: 1
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   attackDamage: 10
   tortugaTransform: {fileID: 0}
 --- !u!114 &933029178
@@ -3163,7 +3163,7 @@ MonoBehaviour:
   myGroundCheck: {fileID: 654655512}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   followDistance: 3
   stopBuffer: 0.5
   maxSpeed: 4
@@ -4721,7 +4721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1635024100}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5927,7 +5927,7 @@ GameObject:
   - component: {fileID: 2091445701}
   - component: {fileID: 2091445703}
   - component: {fileID: 2091445704}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tortuga
   m_TagString: Tortuga
   m_Icon: {fileID: 0}
@@ -6175,7 +6175,7 @@ MonoBehaviour:
   guardKnockbackResist: 0.6
   groundLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   groundSkinWidth: 0.06
   groundCheckDistance: 0.1
   chargeKey: 306
@@ -6209,7 +6209,7 @@ MonoBehaviour:
   tauntCooldown: 14
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
   turtleHealth: {fileID: 2091445701}
   tauntDamageMultiplier: 0.7
   tauntKnockbackScale: 0.5
