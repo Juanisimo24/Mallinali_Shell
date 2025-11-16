@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18d8632f44b8d542945b1609738ed6e, type: 3}
+  m_Name: Turtle_Dialogue_1
+  m_EditorClassIdentifier: 
+  npcName: Malinalli
+  npcPortrait: {fileID: 8427598731574646185, guid: d2eb82be604726c41b9c43e0276490a6, type: 3}
+  playerPortrait: {fileID: -3984893643832805677, guid: a5f73e4af72072c4cb2776f85530f46b, type: 3}
+  dialogueLine:
+  - "\u2026A spirit\u2026 still listens\u2026? Please\u2026 stay your blade\u2026
+    I mean no harm."
+  - Who speaks? Show yourself!
+  - "I am called Malinalli, once guardian of this jungle\u2026 now only a whisper
+    of what I was."
+  - "I\u2026 have slept for so long. My body is broken, my strength scattered across
+    this cursed land."
+  - "A spirit turtle\u2026? Why call to me? I have battles of my own."
+  - "Because I can feel your heart trembling like the roots of the world. You have
+    lost much\u2026 haven\u2019t you, warrior?"
+  - "Your grief sings through the earth itself. I\u2026 I know that pain."
+  - "My village\u2026 gone. Everything burned. I hunt those responsible."
+  - "Then perhaps our fates are intertwined. Those who defiled your home\u2026 they
+    shattered me too. My shell cracked under their corruption."
+  - "Help me rise again, and I will guide you. I can sense what eyes cannot \u2014
+    spirits, memories, hidden paths beneath the veil of this world."
+  - "You ask for my help, spirit\u2026 but why should I trust you?"
+  - Because even gods fear to walk alone.
+  - "I cannot fight as I once did\u2026 but beside you, I can lend my strength, my
+    wisdom\u2026 and perhaps, redemption."
+  - "Tell me, warrior\u2026 what name should I call you by, so the spirits may know
+    who walks beside me?"
+  - "Then rise, (name), and walk with me. I will be your shell, your shield\u2026
+    and you, my blade."
+  - "Together, we may mend what was broken \u2014 or perish as one trying."
+  typingSpeed: 0.05
+  autoProgressLine: 01000101000101000101000101010100
+  autoProgressDelay: 1.5
