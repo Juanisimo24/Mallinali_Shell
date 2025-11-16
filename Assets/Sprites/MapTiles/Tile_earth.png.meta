@@ -1,0 +1,7007 @@
+fileFormatVersion: 2
+guid: 431539b06f5c9694586d6018b555c393
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -582381613136003973
+    second: Tile_earth_0
+  - first:
+      213: 7984419700346572160
+    second: Tile_earth_1
+  - first:
+      213: -7802727783267662728
+    second: Tile_earth_2
+  - first:
+      213: 4802167933787578696
+    second: Tile_earth_3
+  - first:
+      213: 5129360930398469052
+    second: Tile_earth_4
+  - first:
+      213: -3187111339221860799
+    second: Tile_earth_5
+  - first:
+      213: 8018608347464639663
+    second: Tile_earth_6
+  - first:
+      213: 5865457151680776809
+    second: Tile_earth_7
+  - first:
+      213: -1287070926164687176
+    second: Tile_earth_8
+  - first:
+      213: 5620226216125778835
+    second: Tile_earth_9
+  - first:
+      213: 8710038930611271108
+    second: Tile_earth_10
+  - first:
+      213: -6709380180825321530
+    second: Tile_earth_11
+  - first:
+      213: 48865132885677219
+    second: Tile_earth_12
+  - first:
+      213: 3208009242846887899
+    second: Tile_earth_13
+  - first:
+      213: -7763754350343337690
+    second: Tile_earth_14
+  - first:
+      213: -3722994655902667887
+    second: Tile_earth_15
+  - first:
+      213: 4254004471561109653
+    second: Tile_earth_16
+  - first:
+      213: -2812650399616537815
+    second: Tile_earth_17
+  - first:
+      213: 6420745221420118676
+    second: Tile_earth_18
+  - first:
+      213: 555452005716493305
+    second: Tile_earth_19
+  - first:
+      213: -7714171989813636357
+    second: Tile_earth_20
+  - first:
+      213: -2540303682160488800
+    second: Tile_earth_21
+  - first:
+      213: 8240767819103307372
+    second: Tile_earth_22
+  - first:
+      213: 4687416576565402287
+    second: Tile_earth_23
+  - first:
+      213: -5175116547436190577
+    second: Tile_earth_24
+  - first:
+      213: 388935124706054656
+    second: Tile_earth_25
+  - first:
+      213: 8927820183469653818
+    second: Tile_earth_26
+  - first:
+      213: 4684726531310874349
+    second: Tile_earth_27
+  - first:
+      213: 4655965237852751102
+    second: Tile_earth_28
+  - first:
+      213: 6428625211729128252
+    second: Tile_earth_29
+  - first:
+      213: -5295552966001481704
+    second: Tile_earth_30
+  - first:
+      213: -2436609296919593478
+    second: Tile_earth_31
+  - first:
+      213: 6402252367674683910
+    second: Tile_earth_32
+  - first:
+      213: -2166285463902374792
+    second: Tile_earth_33
+  - first:
+      213: 743524924040199269
+    second: Tile_earth_34
+  - first:
+      213: 431608702835619057
+    second: Tile_earth_35
+  - first:
+      213: 6961937929417008301
+    second: Tile_earth_36
+  - first:
+      213: -8776790833146946066
+    second: Tile_earth_37
+  - first:
+      213: -1105809119038082048
+    second: Tile_earth_38
+  - first:
+      213: 1877020374278604735
+    second: Tile_earth_39
+  - first:
+      213: 3937994844955225833
+    second: Tile_earth_40
+  - first:
+      213: 4104765830716334849
+    second: Tile_earth_41
+  - first:
+      213: -6140881168800802641
+    second: Tile_earth_42
+  - first:
+      213: 8242002843990025252
+    second: Tile_earth_43
+  - first:
+      213: -7315381192854969829
+    second: Tile_earth_44
+  - first:
+      213: -2391431052094017212
+    second: Tile_earth_45
+  - first:
+      213: 3246797372696636395
+    second: Tile_earth_46
+  - first:
+      213: 6098241098871780116
+    second: Tile_earth_47
+  - first:
+      213: 955191130767399518
+    second: Tile_earth_48
+  - first:
+      213: 1461128240023889891
+    second: Tile_earth_49
+  - first:
+      213: 9014611121021783133
+    second: Tile_earth_50
+  - first:
+      213: 1317855059601534855
+    second: Tile_earth_51
+  - first:
+      213: 8972562758085403987
+    second: Tile_earth_52
+  - first:
+      213: 5677458273976884855
+    second: Tile_earth_53
+  - first:
+      213: 1453297426192767746
+    second: Tile_earth_54
+  - first:
+      213: 7564606390808524735
+    second: Tile_earth_55
+  - first:
+      213: 4273575858579016860
+    second: Tile_earth_56
+  - first:
+      213: -7560306890505380573
+    second: Tile_earth_57
+  - first:
+      213: 1429866636500365036
+    second: Tile_earth_58
+  - first:
+      213: 1807906752227447853
+    second: Tile_earth_59
+  - first:
+      213: -4814061584964152565
+    second: Tile_earth_60
+  - first:
+      213: 944048646201620888
+    second: Tile_earth_61
+  - first:
+      213: 4528189726326314207
+    second: Tile_earth_62
+  - first:
+      213: 875633337583179166
+    second: Tile_earth_63
+  - first:
+      213: -3881948415764550461
+    second: Tile_earth_64
+  - first:
+      213: 7729336933529254682
+    second: Tile_earth_65
+  - first:
+      213: 3145097892231332752
+    second: Tile_earth_66
+  - first:
+      213: 8840847888733578855
+    second: Tile_earth_67
+  - first:
+      213: -5114194409320253982
+    second: Tile_earth_68
+  - first:
+      213: -7241085727832162259
+    second: Tile_earth_69
+  - first:
+      213: -5355719316611696636
+    second: Tile_earth_70
+  - first:
+      213: -1876465781345082993
+    second: Tile_earth_71
+  - first:
+      213: -4942132271089061157
+    second: Tile_earth_72
+  - first:
+      213: 2283394932274443100
+    second: Tile_earth_73
+  - first:
+      213: 2657797567736965876
+    second: Tile_earth_74
+  - first:
+      213: -7487602375493197493
+    second: Tile_earth_75
+  - first:
+      213: 4654049396909355184
+    second: Tile_earth_76
+  - first:
+      213: 4827795806671198082
+    second: Tile_earth_77
+  - first:
+      213: 249788665985817097
+    second: Tile_earth_78
+  - first:
+      213: 442663879365315980
+    second: Tile_earth_79
+  - first:
+      213: -8078278247304619694
+    second: Tile_earth_80
+  - first:
+      213: 2877957191294164927
+    second: Tile_earth_81
+  - first:
+      213: -1750965491618616863
+    second: Tile_earth_82
+  - first:
+      213: -2194618069603421880
+    second: Tile_earth_83
+  - first:
+      213: 8562892415597220270
+    second: Tile_earth_84
+  - first:
+      213: -8274947379174812206
+    second: Tile_earth_85
+  - first:
+      213: -3895235208225697973
+    second: Tile_earth_86
+  - first:
+      213: -4998828179270139139
+    second: Tile_earth_87
+  - first:
+      213: 7302169063041459866
+    second: Tile_earth_88
+  - first:
+      213: -7064563049576546468
+    second: Tile_earth_89
+  - first:
+      213: -2209278086307106550
+    second: Tile_earth_90
+  - first:
+      213: -6107056979425293371
+    second: Tile_earth_91
+  - first:
+      213: -7968692432485799747
+    second: Tile_earth_92
+  - first:
+      213: -9085943897883435112
+    second: Tile_earth_93
+  - first:
+      213: -7010730362505358280
+    second: Tile_earth_94
+  - first:
+      213: -4919390041595390531
+    second: Tile_earth_95
+  - first:
+      213: 7390289710889291198
+    second: Tile_earth_96
+  - first:
+      213: -1600071566966852948
+    second: Tile_earth_97
+  - first:
+      213: -7224347961842168137
+    second: Tile_earth_98
+  - first:
+      213: -8022856094021576811
+    second: Tile_earth_99
+  - first:
+      213: -2535911931768428210
+    second: Tile_earth_100
+  - first:
+      213: -4865410619364770001
+    second: Tile_earth_101
+  - first:
+      213: 3011743826800532092
+    second: Tile_earth_102
+  - first:
+      213: -3315472328936907693
+    second: Tile_earth_103
+  - first:
+      213: -5925566292399332258
+    second: Tile_earth_104
+  - first:
+      213: 3315315164488248113
+    second: Tile_earth_105
+  - first:
+      213: 9330825063221813
+    second: Tile_earth_106
+  - first:
+      213: 8999140734964224409
+    second: Tile_earth_107
+  - first:
+      213: -8672862085711844758
+    second: Tile_earth_108
+  - first:
+      213: -3899417321026660888
+    second: Tile_earth_109
+  - first:
+      213: 4440443906132488026
+    second: Tile_earth_110
+  - first:
+      213: 8109956259768880399
+    second: Tile_earth_111
+  - first:
+      213: 1782094856632201988
+    second: Tile_earth_112
+  - first:
+      213: 6872257932118862598
+    second: Tile_earth_113
+  - first:
+      213: 1814460679477390657
+    second: Tile_earth_114
+  - first:
+      213: -7724806406045059680
+    second: Tile_earth_115
+  - first:
+      213: -4161992417518867823
+    second: Tile_earth_116
+  - first:
+      213: -6816489199780229071
+    second: Tile_earth_117
+  - first:
+      213: -611556998184462665
+    second: Tile_earth_118
+  - first:
+      213: -4137868561936798617
+    second: Tile_earth_119
+  - first:
+      213: 5573302126087881598
+    second: Tile_earth_120
+  - first:
+      213: -8459570774109147774
+    second: Tile_earth_121
+  - first:
+      213: -5683109916246455848
+    second: Tile_earth_122
+  - first:
+      213: -8475817098100763079
+    second: Tile_earth_123
+  - first:
+      213: 1596282227372146819
+    second: Tile_earth_124
+  - first:
+      213: 3439169339048095899
+    second: Tile_earth_125
+  - first:
+      213: -1075294364156826115
+    second: Tile_earth_126
+  - first:
+      213: 933183419440631824
+    second: Tile_earth_127
+  - first:
+      213: -3033003019774732454
+    second: Tile_earth_128
+  - first:
+      213: 6589295306520853274
+    second: Tile_earth_129
+  - first:
+      213: 751472949682831999
+    second: Tile_earth_130
+  - first:
+      213: 6411419698381244155
+    second: Tile_earth_131
+  - first:
+      213: -7278788088182333526
+    second: Tile_earth_132
+  - first:
+      213: 7727308403009346854
+    second: Tile_earth_133
+  - first:
+      213: 5129203607490123506
+    second: Tile_earth_134
+  - first:
+      213: 2056160300384505202
+    second: Tile_earth_135
+  - first:
+      213: 3456838558347487990
+    second: Tile_earth_136
+  - first:
+      213: -2835175496275582045
+    second: Tile_earth_137
+  - first:
+      213: 1163255137309842041
+    second: Tile_earth_138
+  - first:
+      213: 2900243997898641237
+    second: Tile_earth_139
+  - first:
+      213: 7680468648849262565
+    second: Tile_earth_140
+  - first:
+      213: 1640331947746428028
+    second: Tile_earth_141
+  - first:
+      213: -8601136899613119296
+    second: Tile_earth_142
+  - first:
+      213: 8104157707913496990
+    second: Tile_earth_143
+  - first:
+      213: 3771556526998374132
+    second: Tile_earth_144
+  - first:
+      213: -3203551300966123131
+    second: Tile_earth_145
+  - first:
+      213: 5290329650404947071
+    second: Tile_earth_146
+  - first:
+      213: -2963414931103234203
+    second: Tile_earth_147
+  - first:
+      213: -7540062968934183646
+    second: Tile_earth_148
+  - first:
+      213: -1374138567565910306
+    second: Tile_earth_149
+  - first:
+      213: 587876576825387617
+    second: Tile_earth_150
+  - first:
+      213: -8974258771034778981
+    second: Tile_earth_151
+  - first:
+      213: -6928727792645353413
+    second: Tile_earth_152
+  - first:
+      213: 859503106657330222
+    second: Tile_earth_153
+  - first:
+      213: -6498072285027083167
+    second: Tile_earth_154
+  - first:
+      213: -5720083102447326427
+    second: Tile_earth_155
+  - first:
+      213: 1945874507893329545
+    second: Tile_earth_156
+  - first:
+      213: -6647612033584507368
+    second: Tile_earth_157
+  - first:
+      213: -6980134732173223592
+    second: Tile_earth_158
+  - first:
+      213: 6852279356236635988
+    second: Tile_earth_159
+  - first:
+      213: 2220650746142320159
+    second: Tile_earth_160
+  - first:
+      213: -659755811323370728
+    second: Tile_earth_161
+  - first:
+      213: 6730585263335053938
+    second: Tile_earth_162
+  - first:
+      213: -928665158638558577
+    second: Tile_earth_163
+  - first:
+      213: -31452701082530869
+    second: Tile_earth_164
+  - first:
+      213: 6828383184861703129
+    second: Tile_earth_165
+  - first:
+      213: 1384126533260188601
+    second: Tile_earth_166
+  - first:
+      213: -2665312660693968174
+    second: Tile_earth_167
+  - first:
+      213: -1253778011753696601
+    second: Tile_earth_168
+  - first:
+      213: -5873989439174635585
+    second: Tile_earth_169
+  - first:
+      213: 9195290327677527123
+    second: Tile_earth_170
+  - first:
+      213: -4545124589638938422
+    second: Tile_earth_171
+  - first:
+      213: -6602891084165656670
+    second: Tile_earth_172
+  - first:
+      213: -1315714612572256793
+    second: Tile_earth_173
+  - first:
+      213: 379567850734502827
+    second: Tile_earth_174
+  - first:
+      213: -739440397861751716
+    second: Tile_earth_175
+  - first:
+      213: -2094620755116779534
+    second: Tile_earth_176
+  - first:
+      213: -2026516962490677756
+    second: Tile_earth_177
+  - first:
+      213: 2027122342937587109
+    second: Tile_earth_178
+  - first:
+      213: -1497326921123315830
+    second: Tile_earth_179
+  - first:
+      213: -7704652532271647218
+    second: Tile_earth_180
+  - first:
+      213: 3585338573396003322
+    second: Tile_earth_181
+  - first:
+      213: 7980683217864554963
+    second: Tile_earth_182
+  - first:
+      213: -1746028705982169094
+    second: Tile_earth_183
+  - first:
+      213: -1451580236798970790
+    second: Tile_earth_184
+  - first:
+      213: 7140514809006542509
+    second: Tile_earth_185
+  - first:
+      213: 6877123384098024285
+    second: Tile_earth_186
+  - first:
+      213: 4893886778657131936
+    second: Tile_earth_187
+  - first:
+      213: 4968336297129873811
+    second: Tile_earth_188
+  - first:
+      213: 8255631549357634214
+    second: Tile_earth_189
+  - first:
+      213: 2050950444135662357
+    second: Tile_earth_190
+  - first:
+      213: 2922287866845742626
+    second: Tile_earth_191
+  - first:
+      213: 7232987404810566457
+    second: Tile_earth_192
+  - first:
+      213: -1054280886036558302
+    second: Tile_earth_193
+  - first:
+      213: -8948038789043092457
+    second: Tile_earth_194
+  - first:
+      213: -3560160248726627079
+    second: Tile_earth_195
+  - first:
+      213: -597251116128692717
+    second: Tile_earth_196
+  - first:
+      213: -6804333479429152388
+    second: Tile_earth_197
+  - first:
+      213: 5343517144626325433
+    second: Tile_earth_198
+  - first:
+      213: -7813984024772889970
+    second: Tile_earth_199
+  - first:
+      213: -3783213481889057954
+    second: Tile_earth_200
+  - first:
+      213: -1812505673676018345
+    second: Tile_earth_201
+  - first:
+      213: -2078871504936674813
+    second: Tile_earth_202
+  - first:
+      213: -2356392055707928317
+    second: Tile_earth_203
+  - first:
+      213: -4926044025230310738
+    second: Tile_earth_204
+  - first:
+      213: -514114150320626632
+    second: Tile_earth_205
+  - first:
+      213: 3957812917695644732
+    second: Tile_earth_206
+  - first:
+      213: -8788618827095920854
+    second: Tile_earth_207
+  - first:
+      213: 5584638010292935007
+    second: Tile_earth_208
+  - first:
+      213: 726974877448693930
+    second: Tile_earth_209
+  - first:
+      213: -3538160322043729675
+    second: Tile_earth_210
+  - first:
+      213: -403651480504986902
+    second: Tile_earth_211
+  - first:
+      213: 7939607160349750282
+    second: Tile_earth_212
+  - first:
+      213: 6817969619096446119
+    second: Tile_earth_213
+  - first:
+      213: 3466083452641943982
+    second: Tile_earth_214
+  - first:
+      213: -6443284649818215320
+    second: Tile_earth_215
+  - first:
+      213: -980845676065463526
+    second: Tile_earth_216
+  - first:
+      213: -2568754239058451030
+    second: Tile_earth_217
+  - first:
+      213: -3936908872746811477
+    second: Tile_earth_218
+  - first:
+      213: 1721385799699858394
+    second: Tile_earth_219
+  - first:
+      213: 1808433492961501093
+    second: Tile_earth_220
+  - first:
+      213: 2114322074711839490
+    second: Tile_earth_221
+  - first:
+      213: -2622784297236310672
+    second: Tile_earth_222
+  - first:
+      213: -5610281666313258010
+    second: Tile_earth_223
+  - first:
+      213: -2097229499844911327
+    second: Tile_earth_224
+  - first:
+      213: 5724591744823649939
+    second: Tile_earth_225
+  - first:
+      213: 7680164498130685828
+    second: Tile_earth_226
+  - first:
+      213: -2859970029434033876
+    second: Tile_earth_227
+  - first:
+      213: -904046855107975781
+    second: Tile_earth_228
+  - first:
+      213: -5625888649783060735
+    second: Tile_earth_229
+  - first:
+      213: -6317670540672331652
+    second: Tile_earth_230
+  - first:
+      213: 3445808722955132476
+    second: Tile_earth_231
+  - first:
+      213: -8567160761896454554
+    second: Tile_earth_232
+  - first:
+      213: 8117198540126072439
+    second: Tile_earth_233
+  - first:
+      213: 7933032648943457133
+    second: Tile_earth_234
+  - first:
+      213: 3506277024374221727
+    second: Tile_earth_235
+  - first:
+      213: -1022173255045164146
+    second: Tile_earth_236
+  - first:
+      213: 2396649457330951770
+    second: Tile_earth_237
+  - first:
+      213: -6568105497008809835
+    second: Tile_earth_238
+  - first:
+      213: 5958414233483396290
+    second: Tile_earth_239
+  - first:
+      213: 4255472741977251752
+    second: Tile_earth_240
+  - first:
+      213: 1887132367347036836
+    second: Tile_earth_241
+  - first:
+      213: -9149056891411829301
+    second: Tile_earth_242
+  - first:
+      213: -1634801162964126679
+    second: Tile_earth_243
+  - first:
+      213: -5844453288973277089
+    second: Tile_earth_244
+  - first:
+      213: 3293610426344059341
+    second: Tile_earth_245
+  - first:
+      213: 755824348468539366
+    second: Tile_earth_246
+  - first:
+      213: -7100415937761264209
+    second: Tile_earth_247
+  - first:
+      213: -190122012414795170
+    second: Tile_earth_248
+  - first:
+      213: -8290575241724392424
+    second: Tile_earth_249
+  - first:
+      213: -7809720116324312006
+    second: Tile_earth_250
+  - first:
+      213: -4742258909798262075
+    second: Tile_earth_251
+  - first:
+      213: 997484237882536929
+    second: Tile_earth_252
+  - first:
+      213: -883445037847235988
+    second: Tile_earth_253
+  - first:
+      213: -8468767562611577009
+    second: Tile_earth_254
+  - first:
+      213: -9117297727804356138
+    second: Tile_earth_255
+  - first:
+      213: 3542874206486292131
+    second: Tile_earth_256
+  - first:
+      213: -1349208648877823456
+    second: Tile_earth_257
+  - first:
+      213: -8052196932491137163
+    second: Tile_earth_258
+  - first:
+      213: 6892069461769551204
+    second: Tile_earth_259
+  - first:
+      213: -8113936694172928936
+    second: Tile_earth_260
+  - first:
+      213: -6429610153738892133
+    second: Tile_earth_261
+  - first:
+      213: 3399377944757023648
+    second: Tile_earth_262
+  - first:
+      213: -1858712135318813272
+    second: Tile_earth_263
+  - first:
+      213: 3130621808239061775
+    second: Tile_earth_264
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tile_earth_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 967
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c3f492207fae7f0800000000000000
+      internalID: -582381613136003973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 912
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08dc9c80a6b5ece60800000000000000
+      internalID: 7984419700346572160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 861
+        width: 96
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8748247fb6427b390800000000000000
+      internalID: -7802727783267662728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 913
+        width: 54
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8412e25fa4ab4a240800000000000000
+      internalID: 4802167933787578696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 965
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbbfa25f6962f2740800000000000000
+      internalID: 5129360930398469052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_5
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 915
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ebf0e7f1b15c3d0800000000000000
+      internalID: -3187111339221860799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 967
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4ac9fbec1d74f60800000000000000
+      internalID: 8018608347464639663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 912
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a0533f33a466150800000000000000
+      internalID: 5865457151680776809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 913
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b68835dfc7632ee0800000000000000
+      internalID: -1287070926164687176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_9
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 965
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bc38167fd0ffd40800000000000000
+      internalID: 5620226216125778835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_10
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 965
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c578e6724640e870800000000000000
+      internalID: 8710038930611271108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_11
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 912
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf4cdaf54e73e2a0800000000000000
+      internalID: -6709380180825321530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 965
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a49d87549a9da000800000000000000
+      internalID: 48865132885677219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 915
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdffe0cd863258c20800000000000000
+      internalID: 3208009242846887899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_14
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 965
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62944607d8a914490800000000000000
+      internalID: -7763754350343337690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_15
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 913
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b6e32f514455cc0800000000000000
+      internalID: -3722994655902667887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_16
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 965
+        width: 53
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590c2583782490b30800000000000000
+      internalID: 4254004471561109653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 913
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bee751d5577f8d0800000000000000
+      internalID: -2812650399616537815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_18
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 965
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4927804a2c11b1950800000000000000
+      internalID: 6420745221420118676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_19
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 913
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3828208ac55b700800000000000000
+      internalID: 555452005716493305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_20
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 964
+        width: 100
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2d3ea5271c1f490800000000000000
+      internalID: -7714171989813636357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_21
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 911
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae053b92470fbcd0800000000000000
+      internalID: -2540303682160488800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_22
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 913
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c668f168ba61d5270800000000000000
+      internalID: 8240767819103307372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_23
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 966
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa55789a8c0d0140800000000000000
+      internalID: 4687416576565402287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_24
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 915
+        width: 47
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84e1d64bea4e28b0800000000000000
+      internalID: -5175116547436190577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_25
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 966
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002d6cc6f66c56500800000000000000
+      internalID: 388935124706054656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_26
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 912
+        width: 101
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f754eb72df5eb70800000000000000
+      internalID: 8927820183469653818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_27
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 965
+        width: 99
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deee1a0a5fd730140800000000000000
+      internalID: 4684726531310874349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_28
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 913
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4c7c827bf4d9040800000000000000
+      internalID: 4655965237852751102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_29
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 966
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b2c3bd190173950800000000000000
+      internalID: 6428625211729128252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_30
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 911
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818273c62aa6286b0800000000000000
+      internalID: -5295552966001481704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_31
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 909
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd71b011cc6f2ed0800000000000000
+      internalID: -2436609296919593478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_32
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 964
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60237a99b9e59d850800000000000000
+      internalID: 6402252367674683910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_33
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 862
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 874b10a19decfe1e0800000000000000
+      internalID: -2166285463902374792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_34
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 807
+        width: 102
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56cb013aaf7815a00800000000000000
+      internalID: 743524924040199269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_35
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 863
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4fb7614d16df500800000000000000
+      internalID: 431608702835619057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_36
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 861
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4283f29a5cd9060800000000000000
+      internalID: 6961937929417008301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_37
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 862
+        width: 50
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eed1f5a1d33923680800000000000000
+      internalID: -8776790833146946066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_38
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 863
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004f85e077067a0f0800000000000000
+      internalID: -1105809119038082048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_39
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 863
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb70c05e5148c0a10800000000000000
+      internalID: 1877020374278604735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_40
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 862
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee20e4727196a630800000000000000
+      internalID: 3937994844955225833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_41
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 862
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103220a66ce07f830800000000000000
+      internalID: 4104765830716334849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_42
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 862
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa81ebddc1537caa0800000000000000
+      internalID: -6140881168800802641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_43
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 862
+        width: 49
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424e8c92be9716270800000000000000
+      internalID: 8242002843990025252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_44
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 865
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b126e4b409b8a7a90800000000000000
+      internalID: -7315381192854969829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_45
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 863
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441f813e02eefced0800000000000000
+      internalID: -2391431052094017212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_46
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 861
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb21491201fe0d20800000000000000
+      internalID: 3246797372696636395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_47
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 861
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413b0f438fd41a450800000000000000
+      internalID: 6098241098871780116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_48
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 868
+        width: 94
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a9ef9c545814d00800000000000000
+      internalID: 955191130767399518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_49
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 807
+        width: 142
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e76ae59468f64410800000000000000
+      internalID: 1461128240023889891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_50
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 807
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c0ac89d055a1d70800000000000000
+      internalID: 9014611121021783133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_51
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 808
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f2005c136f94210800000000000000
+      internalID: 1317855059601534855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_52
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 807
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35564903a42f48c70800000000000000
+      internalID: 8972562758085403987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_53
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 807
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e9e7f38326ace40800000000000000
+      internalID: 5677458273976884855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_54
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 808
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b95392f462b2410800000000000000
+      internalID: 1453297426192767746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_55
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 808
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7bac5fe61eaf860800000000000000
+      internalID: 7564606390808524735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_56
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 807
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c894bd99ace4b30800000000000000
+      internalID: 4273575858579016860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_57
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 807
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d1d7670f4641790800000000000000
+      internalID: -7560306890505380573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_58
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 808
+        width: 150
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee69c05128e7d310800000000000000
+      internalID: 1429866636500365036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_59
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 807
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d241c89cc99f61910800000000000000
+      internalID: 1807906752227447853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_60
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 807
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b039b559e74013db0800000000000000
+      internalID: -4814061584964152565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_61
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 815
+        width: 93
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899398fed3fe91d00800000000000000
+      internalID: 944048646201620888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_62
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 807
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4d041909c57de30800000000000000
+      internalID: 4528189726326314207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_63
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 807
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95922891efd62c00800000000000000
+      internalID: 875633337583179166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_64
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 731
+        width: 193
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cca6f9bb7c802ac0800000000000000
+      internalID: -3881948415764550461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_65
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 785
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b71504dfe144b60800000000000000
+      internalID: 7729336933529254682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_66
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 742
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093474a9ed1a5ab20800000000000000
+      internalID: 3145097892231332752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_67
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 733
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7662a31605001ba70800000000000000
+      internalID: 8840847888733578855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_68
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 732
+        width: 116
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e57d28e74bb609b0800000000000000
+      internalID: -5114194409320253982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_69
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 735
+        width: 84
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20c96c35ee728b90800000000000000
+      internalID: -7241085727832162259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_70
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 732
+        width: 277
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40879a848a9aca5b0800000000000000
+      internalID: -5355719316611696636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_71
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 743
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8120c5505475f5e0800000000000000
+      internalID: -1876465781345082993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_72
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 741
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2fdbc42e40a6bb0800000000000000
+      internalID: -4942132271089061157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_73
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 687
+        width: 48
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53352cc79f30bf10800000000000000
+      internalID: 2283394932274443100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_74
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 691
+        width: 53
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4faebd56ec462e420800000000000000
+      internalID: 2657797567736965876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_75
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 745
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b416b5d7f41b61890800000000000000
+      internalID: -7487602375493197493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_76
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 681
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b037eda441869040800000000000000
+      internalID: 4654049396909355184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_77
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 629
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 287d1c815b6cff240800000000000000
+      internalID: 4827795806671198082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_78
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 681
+        width: 90
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ad001e77d677300800000000000000
+      internalID: 249788665985817097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_79
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 631
+        width: 90
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d4774f378a42600800000000000000
+      internalID: 442663879365315980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_80
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 629
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25994a01cb034ef80800000000000000
+      internalID: -8078278247304619694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_81
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 679
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf9ed141de80f720800000000000000
+      internalID: 2877957191294164927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_82
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 631
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9ea12992253b7e0800000000000000
+      internalID: -1750965491618616863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_83
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 681
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84172a74e762b81e0800000000000000
+      internalID: -2194618069603421880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_84
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 678
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea11f89a84185d670800000000000000
+      internalID: 8562892415597220270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_85
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 629
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d55c31833b792d80800000000000000
+      internalID: -8274947379174812206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_86
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 681
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fcc19473851f9c0800000000000000
+      internalID: -3895235208225697973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_87
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 629
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df20461814890aab0800000000000000
+      internalID: -4998828179270139139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_88
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 677
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96ee640314865560800000000000000
+      internalID: 7302169063041459866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_89
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 629
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fb3a80651a5fd90800000000000000
+      internalID: -7064563049576546468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_90
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 630
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a013c9729411751e0800000000000000
+      internalID: -2209278086307106550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_91
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 680
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb0946a8006f3ba0800000000000000
+      internalID: -6107056979425293371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_92
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 681
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8275dd374896190800000000000000
+      internalID: -7968692432485799747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_93
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 631
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f978d0a2e38e180800000000000000
+      internalID: -9085943897883435112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_94
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 629
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83492d631e1e4be90800000000000000
+      internalID: -7010730362505358280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_95
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 681
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5dc1b32d0dabbb0800000000000000
+      internalID: -4919390041595390531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_96
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 681
+        width: 47
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdc7cc26559f8660800000000000000
+      internalID: 7390289710889291198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_97
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 629
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2fcbb23676bc9e0800000000000000
+      internalID: -1600071566966852948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_98
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 681
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be84901ec5fdbb90800000000000000
+      internalID: -7224347961842168137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_99
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 683
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59714cfa3e619a090800000000000000
+      internalID: -8022856094021576811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_100
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 631
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49a44da881aeccd0800000000000000
+      internalID: -2535911931768428210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_101
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 629
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f795ad1d69a7cb0800000000000000
+      internalID: -4865410619364770001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_102
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 682
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7adbe6bd0ddbc920800000000000000
+      internalID: 3011743826800532092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_103
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 631
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c1413ab731df1d0800000000000000
+      internalID: -3315472328936907693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_104
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 681
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5462802ad824cda0800000000000000
+      internalID: -5925566292399332258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_105
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 629
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ba9c9a39d520e20800000000000000
+      internalID: 3315315164488248113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_106
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 678
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53aca510656212000800000000000000
+      internalID: 9330825063221813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_107
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 679
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9915a47a1de53ec70800000000000000
+      internalID: 8999140734964224409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_108
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 627
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a213342edc3a780800000000000000
+      internalID: -8672862085711844758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_109
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 681
+        width: 51
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e553354b9c72e9c0800000000000000
+      internalID: -3899417321026660888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_110
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 631
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f2316c430af9d30800000000000000
+      internalID: 4440443906132488026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_111
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 631
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0dca77ff3a5c8070800000000000000
+      internalID: 8109956259768880399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_112
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 631
+        width: 58
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403fc9584d54bb810800000000000000
+      internalID: 1782094856632201988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_113
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 636
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b2ec0bd2a2f5f50800000000000000
+      internalID: 6872257932118862598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_114
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 571
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14de923ef524e2910800000000000000
+      internalID: 1814460679477390657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_115
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 519
+        width: 96
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5b5016089fbc490800000000000000
+      internalID: -7724806406045059680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_116
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 570
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a2beb82f1ad36c0800000000000000
+      internalID: -4161992417518867823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_117
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 570
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13010d72037f661a0800000000000000
+      internalID: -6816489199780229071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_118
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 619
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b69f4b76205387f0800000000000000
+      internalID: -611556998184462665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_119
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 571
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c208e57765396c0800000000000000
+      internalID: -4137868561936798617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_120
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 571
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73c56b41c8585d40800000000000000
+      internalID: 5573302126087881598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_121
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 572
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28da2f0a331999a80800000000000000
+      internalID: -8459570774109147774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_122
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 519
+        width: 54
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d941ae34a98121b0800000000000000
+      internalID: -5683109916246455848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_123
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 576
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936958e8149df5a80800000000000000
+      internalID: -8475817098100763079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_124
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 573
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38049c37a32272610800000000000000
+      internalID: 1596282227372146819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_125
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 574
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b907068da426abf20800000000000000
+      internalID: 3439169339048095899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_126
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 575
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfde3731979c311f0800000000000000
+      internalID: -1075294364156826115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_127
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 575
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0101b02306553fc00800000000000000
+      internalID: 933183419440631824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_128
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 521
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57d3a3b2db98e5d0800000000000000
+      internalID: -3033003019774732454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_129
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 523
+        width: 50
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1bf2517b21e17b50800000000000000
+      internalID: 6589295306520853274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_130
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 571
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7209209aa4cd6a00800000000000000
+      internalID: 751472949682831999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_131
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 519
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf6c4fb1f30f9f850800000000000000
+      internalID: 6411419698381244155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_132
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 518
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf1c886ccc8cfa90800000000000000
+      internalID: -7278788088182333526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_133
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 519
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d534f2d0aec3b60800000000000000
+      internalID: 7727308403009346854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_134
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 519
+        width: 91
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6d91d51879e2740800000000000000
+      internalID: 5129203607490123506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_135
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 519
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dcda136e2f88c10800000000000000
+      internalID: 2056160300384505202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_136
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 519
+        width: 50
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6faec2c8a5829ff20800000000000000
+      internalID: 3456838558347487990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_137
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 523
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a32a9458ee67a8d0800000000000000
+      internalID: -2835175496275582045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_138
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 523
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a508a5266b42010800000000000000
+      internalID: 1163255137309842041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_139
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 523
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f05b8cc8cbf3820800000000000000
+      internalID: 2900243997898641237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_140
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 523
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e74f231b81869a60800000000000000
+      internalID: 7680468648849262565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_141
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 523
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7486233731a3c610800000000000000
+      internalID: 1640331947746428028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_142
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 543
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc2e028f8f92a880800000000000000
+      internalID: -8601136899613119296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 332
+        width: 351
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e998de76f70c77070800000000000000
+      internalID: 8104157707913496990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_144
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 335
+        width: 157
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f64b02cda2475430800000000000000
+      internalID: 3771556526998374132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_145
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 417
+        width: 54
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5897c2e9013ba83d0800000000000000
+      internalID: -3203551300966123131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_146
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 417
+        width: 50
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f747a15a9c60b6940800000000000000
+      internalID: 5290329650404947071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_147
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 417
+        width: 52
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567c08d22d5dfd6d0800000000000000
+      internalID: -2963414931103234203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_148
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 418
+        width: 50
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22dc990cda05c5790800000000000000
+      internalID: -7540062968934183646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_149
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 418
+        width: 49
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eded118d0441eece0800000000000000
+      internalID: -1374138567565910306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_150
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 416
+        width: 49
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a2375c1ae882800800000000000000
+      internalID: 587876576825387617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_151
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 417
+        width: 52
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92d9060237057380800000000000000
+      internalID: -8974258771034778981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_152
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 417
+        width: 50
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b305ff558c638df90800000000000000
+      internalID: -6928727792645353413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_153
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 485
+        width: 99
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24a7ab85819deb00800000000000000
+      internalID: 859503106657330222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_154
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 425
+        width: 99
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c562e5fa532d5a0800000000000000
+      internalID: -6498072285027083167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_155
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 280
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ba9e089be2e90b0800000000000000
+      internalID: -5720083102447326427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_156
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 280
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e48742e82210b10800000000000000
+      internalID: 1945874507893329545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_157
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 259
+        width: 139
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81655957310feb3a0800000000000000
+      internalID: -6647612033584507368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_158
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 281
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 859d2748174912f90800000000000000
+      internalID: -6980134732173223592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_159
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 280
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f1a3205cf281f50800000000000000
+      internalID: 6852279356236635988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_160
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 331
+        width: 305
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16e40e861651de10800000000000000
+      internalID: 2220650746142320159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_161
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 280
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813229bc59318d6f0800000000000000
+      internalID: -659755811323370728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_162
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 281
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a909703a7d76d50800000000000000
+      internalID: 6730585263335053938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_163
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 281
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82211065f7bc13f0800000000000000
+      internalID: -928665158638558577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_164
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 278
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcbcfbc5fe1409ff0800000000000000
+      internalID: -31452701082530869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_165
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 282
+        width: 49
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dbaeeb045a43ce50800000000000000
+      internalID: 6828383184861703129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_166
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 281
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb9a23afb7653310800000000000000
+      internalID: 1384126533260188601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_167
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 231
+        width: 56
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da1cfba148e20bd0800000000000000
+      internalID: -2665312660693968174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_168
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 333
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2b9368a8fa99ee0800000000000000
+      internalID: -1253778011753696601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_169
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 281
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf899f0ab56b7ea0800000000000000
+      internalID: -5873989439174635585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_170
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 330
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354edc395db3c9f70800000000000000
+      internalID: 9195290327677527123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_171
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 281
+        width: 90
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac09dae44497ce0c0800000000000000
+      internalID: -4545124589638938422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_172
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 183
+        width: 52
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af46b5ea81dd54a0800000000000000
+      internalID: -6602891084165656670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_173
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 228
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e507d3e784adbde0800000000000000
+      internalID: -1315714612572256793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_174
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 230
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3403ff2fe744500800000000000000
+      internalID: 379567850734502827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_175
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 231
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5470e830eafcb5f0800000000000000
+      internalID: -739440397861751716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_176
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 281
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f79a1065896ee2e0800000000000000
+      internalID: -2094620755116779534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_177
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 233
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406807f3f8d50e3e0800000000000000
+      internalID: -2026516962490677756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_178
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 279
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad6d0fd709c12c10800000000000000
+      internalID: 2027122342937587109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_179
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 279
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8fb0d1391d683be0800000000000000
+      internalID: -1497326921123315830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_180
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 231
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e067228c753931590800000000000000
+      internalID: -7704652532271647218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_181
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 281
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af946c2cf6ea1c130800000000000000
+      internalID: 3585338573396003322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_182
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 278
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9fcb96a1511ce60800000000000000
+      internalID: 7980683217864554963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_183
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 231
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff3c4c842cd4c7e0800000000000000
+      internalID: -1746028705982169094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_184
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 281
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54be962773fadbe0800000000000000
+      internalID: -1451580236798970790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_185
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 233
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dae40400364381360800000000000000
+      internalID: 7140514809006542509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_186
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 232
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5be1b10843707f50800000000000000
+      internalID: 6877123384098024285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_187
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 232
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0adc6d4a8149ae340800000000000000
+      internalID: 4893886778657131936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_188
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 231
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3911b13f98313f440800000000000000
+      internalID: 4968336297129873811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_189
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 231
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a238f76725e19270800000000000000
+      internalID: 8255631549357634214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_190
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 231
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513c2a20090767c10800000000000000
+      internalID: 2050950444135662357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_191
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 232
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22646caf45d0e8820800000000000000
+      internalID: 2922287866845742626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_192
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 130
+        width: 53
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93bbb9009bbb06460800000000000000
+      internalID: 7232987404810566457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_193
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 255
+        width: 87
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e8e46be117e51f0800000000000000
+      internalID: -1054280886036558302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_194
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 183
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7148bae412e22d380800000000000000
+      internalID: -8948038789043092457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_195
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 214
+        width: 87
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fcde27cd15c79ec0800000000000000
+      internalID: -3560160248726627079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_196
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 135
+        width: 53
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3169175364326b7f0800000000000000
+      internalID: -597251116128692717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_197
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 136
+        width: 49
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71e35950c62291a0800000000000000
+      internalID: -6804333479429152388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_198
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 139
+        width: 49
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b769a8288cf72a40800000000000000
+      internalID: 5343517144626325433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_199
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 136
+        width: 54
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82b5d20ee62f8390800000000000000
+      internalID: -7813984024772889970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_200
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 182
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53b88ee1635f7bc0800000000000000
+      internalID: -3783213481889057954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_201
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 132
+        width: 54
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d292f51bfa8d6e0800000000000000
+      internalID: -1812505673676018345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_202
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 180
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a519e616d5623e0800000000000000
+      internalID: -2078871504936674813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_203
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 182
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309f9f7f8e96c4fd0800000000000000
+      internalID: -2356392055707928317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_204
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 182
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea24630fe0d23abb0800000000000000
+      internalID: -4926044025230310738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_205
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 181
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834232877ef7dd8f0800000000000000
+      internalID: -514114150320626632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_206
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 135
+        width: 50
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3483b611e9fce630800000000000000
+      internalID: 3957812917695644732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_207
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 135
+        width: 54
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f23a8adbd880680800000000000000
+      internalID: -8788618827095920854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_208
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 231
+        width: 61
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5997a28eae908d40800000000000000
+      internalID: 5584638010292935007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_209
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 182
+        width: 89
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa866f2accbb61a00800000000000000
+      internalID: 726974877448693930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_210
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 167
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8a33edeede5eec0800000000000000
+      internalID: -3538160322043729675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_211
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 185
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2907bfd11f56af0800000000000000
+      internalID: -403651480504986902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_212
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 191
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a047bc085a62f2e60800000000000000
+      internalID: 7939607160349750282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_213
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 191
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a426a3de3b4e9e50800000000000000
+      internalID: 6817969619096446119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_214
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 134
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1259c39800a1030800000000000000
+      internalID: 3466083452641943982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_215
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 131
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86cabdcbfbad496a0800000000000000
+      internalID: -6443284649818215320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_216
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 182
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13e3aaed065362f0800000000000000
+      internalID: -980845676065463526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_217
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 131
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa564a121a3f95cd0800000000000000
+      internalID: -2568754239058451030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_218
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 130
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bafb7d62d3a4d59c0800000000000000
+      internalID: -3936908872746811477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_219
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 132
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad30388b34793e710800000000000000
+      internalID: 1721385799699858394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_220
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 179
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af93eb2ea8d81910800000000000000
+      internalID: 1808433492961501093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_221
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 131
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20357fb89b4975d10800000000000000
+      internalID: 2114322074711839490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_222
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 159
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 075d1c8e39ff99bd0800000000000000
+      internalID: -2622784297236310672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_223
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 135
+        width: 63
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebf28d8c864422b0800000000000000
+      internalID: -5610281666313258010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_224
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 153
+        width: 55
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12f1649a1e425e2e0800000000000000
+      internalID: -2097229499844911327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_225
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 100
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396e85a9cd5d17f40800000000000000
+      internalID: 5724591744823649939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_226
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 55
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f45a77bec659a60800000000000000
+      internalID: 7680164498130685828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_227
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 55
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29225739685f48d0800000000000000
+      internalID: -2859970029434033876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_228
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 101
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95eaf4dc2e2473f0800000000000000
+      internalID: -904046855107975781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_229
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 55
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10757cb8414dce1b0800000000000000
+      internalID: -5625888649783060735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_230
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 52
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70964f9d102358a0800000000000000
+      internalID: -6317670540672331652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_231
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 101
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3edeafd6c8f1df20800000000000000
+      internalID: 3445808722955132476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_232
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 69
+        width: 54
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6663f758da45b1980800000000000000
+      internalID: -8567160761896454554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_233
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 69
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ea883c01516a070800000000000000
+      internalID: 8117198540126072439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_234
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 79
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63d9d7c92bc71e60800000000000000
+      internalID: 7933032648943457133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_235
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 81
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b60f9606cc8a030800000000000000
+      internalID: 3506277024374221727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_236
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 80
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83d02a17d280d1f0800000000000000
+      internalID: -1022173255045164146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_237
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 80
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a561853cbfb924120800000000000000
+      internalID: 2396649457330951770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_238
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 81
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598df7b89d669d4a0800000000000000
+      internalID: -6568105497008809835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_239
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 80
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c4c8632d2a80b250800000000000000
+      internalID: 5958414233483396290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_240
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 78
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af59e099e97e0b30800000000000000
+      internalID: 4255472741977251752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_241
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 81
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2bcdfb3e0703a10800000000000000
+      internalID: 1887132367347036836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_242
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 71
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcdee852b35080180800000000000000
+      internalID: -9149056891411829301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_243
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 79
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924b02bf0050059e0800000000000000
+      internalID: -1634801162964126679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_244
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 19
+        width: 52
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58626ce2b454eea0800000000000000
+      internalID: -5844453288973277089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_245
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 18
+        width: 54
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1b2c28b3145bd20800000000000000
+      internalID: 3293610426344059341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_246
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 20
+        width: 47
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6efee0b8d3a3d7a00800000000000000
+      internalID: 755824348468539366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_247
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 19
+        width: 53
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fadb7300351467d90800000000000000
+      internalID: -7100415937761264209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_248
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52a80a790d8c5df0800000000000000
+      internalID: -190122012414795170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_249
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 7
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c8e553eb5f1fc80800000000000000
+      internalID: -8290575241724392424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_250
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 5
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c544f8eec4e9390800000000000000
+      internalID: -7809720116324312006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_251
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 3
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca1b88a5ac103eb0800000000000000
+      internalID: -4742258909798262075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_252
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 54
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e33a0421a6c7dd00800000000000000
+      internalID: 997484237882536929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_253
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62b8843b6f5db3f0800000000000000
+      internalID: -883445037847235988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_254
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 31
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4faf2175c4e87a80800000000000000
+      internalID: -8468767562611577009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_255
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 31
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9ceb6a50ad87180800000000000000
+      internalID: -9117297727804356138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_256
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 31
+        width: 48
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a66281e151da2130800000000000000
+      internalID: 3542874206486292131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_257
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 31
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02aa0cbd1e5a64de0800000000000000
+      internalID: -1349208648877823456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_258
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 15
+        width: 51
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f20616d89d04090800000000000000
+      internalID: -8052196932491137163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_259
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 15
+        width: 52
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d7714e8ac85af50800000000000000
+      internalID: 6892069461769551204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_260
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 15
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854b0dde091856f80800000000000000
+      internalID: -8113936694172928936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_261
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 3
+        width: 55
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c062671af65c6a0800000000000000
+      internalID: -6429610153738892133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_262
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 43
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a33a86ea340d2f20800000000000000
+      internalID: 3399377944757023648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_263
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 23
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a54d9a29278436e0800000000000000
+      internalID: -1858712135318813272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile_earth_264
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 10
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b2e26a2f3327b20800000000000000
+      internalID: 3130621808239061775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tile_earth_0: -582381613136003973
+      Tile_earth_1: 7984419700346572160
+      Tile_earth_10: 8710038930611271108
+      Tile_earth_100: -2535911931768428210
+      Tile_earth_101: -4865410619364770001
+      Tile_earth_102: 3011743826800532092
+      Tile_earth_103: -3315472328936907693
+      Tile_earth_104: -5925566292399332258
+      Tile_earth_105: 3315315164488248113
+      Tile_earth_106: 9330825063221813
+      Tile_earth_107: 8999140734964224409
+      Tile_earth_108: -8672862085711844758
+      Tile_earth_109: -3899417321026660888
+      Tile_earth_11: -6709380180825321530
+      Tile_earth_110: 4440443906132488026
+      Tile_earth_111: 8109956259768880399
+      Tile_earth_112: 1782094856632201988
+      Tile_earth_113: 6872257932118862598
+      Tile_earth_114: 1814460679477390657
+      Tile_earth_115: -7724806406045059680
+      Tile_earth_116: -4161992417518867823
+      Tile_earth_117: -6816489199780229071
+      Tile_earth_118: -611556998184462665
+      Tile_earth_119: -4137868561936798617
+      Tile_earth_12: 48865132885677219
+      Tile_earth_120: 5573302126087881598
+      Tile_earth_121: -8459570774109147774
+      Tile_earth_122: -5683109916246455848
+      Tile_earth_123: -8475817098100763079
+      Tile_earth_124: 1596282227372146819
+      Tile_earth_125: 3439169339048095899
+      Tile_earth_126: -1075294364156826115
+      Tile_earth_127: 933183419440631824
+      Tile_earth_128: -3033003019774732454
+      Tile_earth_129: 6589295306520853274
+      Tile_earth_13: 3208009242846887899
+      Tile_earth_130: 751472949682831999
+      Tile_earth_131: 6411419698381244155
+      Tile_earth_132: -7278788088182333526
+      Tile_earth_133: 7727308403009346854
+      Tile_earth_134: 5129203607490123506
+      Tile_earth_135: 2056160300384505202
+      Tile_earth_136: 3456838558347487990
+      Tile_earth_137: -2835175496275582045
+      Tile_earth_138: 1163255137309842041
+      Tile_earth_139: 2900243997898641237
+      Tile_earth_14: -7763754350343337690
+      Tile_earth_140: 7680468648849262565
+      Tile_earth_141: 1640331947746428028
+      Tile_earth_142: -8601136899613119296
+      Tile_earth_143: 8104157707913496990
+      Tile_earth_144: 3771556526998374132
+      Tile_earth_145: -3203551300966123131
+      Tile_earth_146: 5290329650404947071
+      Tile_earth_147: -2963414931103234203
+      Tile_earth_148: -7540062968934183646
+      Tile_earth_149: -1374138567565910306
+      Tile_earth_15: -3722994655902667887
+      Tile_earth_150: 587876576825387617
+      Tile_earth_151: -8974258771034778981
+      Tile_earth_152: -6928727792645353413
+      Tile_earth_153: 859503106657330222
+      Tile_earth_154: -6498072285027083167
+      Tile_earth_155: -5720083102447326427
+      Tile_earth_156: 1945874507893329545
+      Tile_earth_157: -6647612033584507368
+      Tile_earth_158: -6980134732173223592
+      Tile_earth_159: 6852279356236635988
+      Tile_earth_16: 4254004471561109653
+      Tile_earth_160: 2220650746142320159
+      Tile_earth_161: -659755811323370728
+      Tile_earth_162: 6730585263335053938
+      Tile_earth_163: -928665158638558577
+      Tile_earth_164: -31452701082530869
+      Tile_earth_165: 6828383184861703129
+      Tile_earth_166: 1384126533260188601
+      Tile_earth_167: -2665312660693968174
+      Tile_earth_168: -1253778011753696601
+      Tile_earth_169: -5873989439174635585
+      Tile_earth_17: -2812650399616537815
+      Tile_earth_170: 9195290327677527123
+      Tile_earth_171: -4545124589638938422
+      Tile_earth_172: -6602891084165656670
+      Tile_earth_173: -1315714612572256793
+      Tile_earth_174: 379567850734502827
+      Tile_earth_175: -739440397861751716
+      Tile_earth_176: -2094620755116779534
+      Tile_earth_177: -2026516962490677756
+      Tile_earth_178: 2027122342937587109
+      Tile_earth_179: -1497326921123315830
+      Tile_earth_18: 6420745221420118676
+      Tile_earth_180: -7704652532271647218
+      Tile_earth_181: 3585338573396003322
+      Tile_earth_182: 7980683217864554963
+      Tile_earth_183: -1746028705982169094
+      Tile_earth_184: -1451580236798970790
+      Tile_earth_185: 7140514809006542509
+      Tile_earth_186: 6877123384098024285
+      Tile_earth_187: 4893886778657131936
+      Tile_earth_188: 4968336297129873811
+      Tile_earth_189: 8255631549357634214
+      Tile_earth_19: 555452005716493305
+      Tile_earth_190: 2050950444135662357
+      Tile_earth_191: 2922287866845742626
+      Tile_earth_192: 7232987404810566457
+      Tile_earth_193: -1054280886036558302
+      Tile_earth_194: -8948038789043092457
+      Tile_earth_195: -3560160248726627079
+      Tile_earth_196: -597251116128692717
+      Tile_earth_197: -6804333479429152388
+      Tile_earth_198: 5343517144626325433
+      Tile_earth_199: -7813984024772889970
+      Tile_earth_2: -7802727783267662728
+      Tile_earth_20: -7714171989813636357
+      Tile_earth_200: -3783213481889057954
+      Tile_earth_201: -1812505673676018345
+      Tile_earth_202: -2078871504936674813
+      Tile_earth_203: -2356392055707928317
+      Tile_earth_204: -4926044025230310738
+      Tile_earth_205: -514114150320626632
+      Tile_earth_206: 3957812917695644732
+      Tile_earth_207: -8788618827095920854
+      Tile_earth_208: 5584638010292935007
+      Tile_earth_209: 726974877448693930
+      Tile_earth_21: -2540303682160488800
+      Tile_earth_210: -3538160322043729675
+      Tile_earth_211: -403651480504986902
+      Tile_earth_212: 7939607160349750282
+      Tile_earth_213: 6817969619096446119
+      Tile_earth_214: 3466083452641943982
+      Tile_earth_215: -6443284649818215320
+      Tile_earth_216: -980845676065463526
+      Tile_earth_217: -2568754239058451030
+      Tile_earth_218: -3936908872746811477
+      Tile_earth_219: 1721385799699858394
+      Tile_earth_22: 8240767819103307372
+      Tile_earth_220: 1808433492961501093
+      Tile_earth_221: 2114322074711839490
+      Tile_earth_222: -2622784297236310672
+      Tile_earth_223: -5610281666313258010
+      Tile_earth_224: -2097229499844911327
+      Tile_earth_225: 5724591744823649939
+      Tile_earth_226: 7680164498130685828
+      Tile_earth_227: -2859970029434033876
+      Tile_earth_228: -904046855107975781
+      Tile_earth_229: -5625888649783060735
+      Tile_earth_23: 4687416576565402287
+      Tile_earth_230: -6317670540672331652
+      Tile_earth_231: 3445808722955132476
+      Tile_earth_232: -8567160761896454554
+      Tile_earth_233: 8117198540126072439
+      Tile_earth_234: 7933032648943457133
+      Tile_earth_235: 3506277024374221727
+      Tile_earth_236: -1022173255045164146
+      Tile_earth_237: 2396649457330951770
+      Tile_earth_238: -6568105497008809835
+      Tile_earth_239: 5958414233483396290
+      Tile_earth_24: -5175116547436190577
+      Tile_earth_240: 4255472741977251752
+      Tile_earth_241: 1887132367347036836
+      Tile_earth_242: -9149056891411829301
+      Tile_earth_243: -1634801162964126679
+      Tile_earth_244: -5844453288973277089
+      Tile_earth_245: 3293610426344059341
+      Tile_earth_246: 755824348468539366
+      Tile_earth_247: -7100415937761264209
+      Tile_earth_248: -190122012414795170
+      Tile_earth_249: -8290575241724392424
+      Tile_earth_25: 388935124706054656
+      Tile_earth_250: -7809720116324312006
+      Tile_earth_251: -4742258909798262075
+      Tile_earth_252: 997484237882536929
+      Tile_earth_253: -883445037847235988
+      Tile_earth_254: -8468767562611577009
+      Tile_earth_255: -9117297727804356138
+      Tile_earth_256: 3542874206486292131
+      Tile_earth_257: -1349208648877823456
+      Tile_earth_258: -8052196932491137163
+      Tile_earth_259: 6892069461769551204
+      Tile_earth_26: 8927820183469653818
+      Tile_earth_260: -8113936694172928936
+      Tile_earth_261: -6429610153738892133
+      Tile_earth_262: 3399377944757023648
+      Tile_earth_263: -1858712135318813272
+      Tile_earth_264: 3130621808239061775
+      Tile_earth_27: 4684726531310874349
+      Tile_earth_28: 4655965237852751102
+      Tile_earth_29: 6428625211729128252
+      Tile_earth_3: 4802167933787578696
+      Tile_earth_30: -5295552966001481704
+      Tile_earth_31: -2436609296919593478
+      Tile_earth_32: 6402252367674683910
+      Tile_earth_33: -2166285463902374792
+      Tile_earth_34: 743524924040199269
+      Tile_earth_35: 431608702835619057
+      Tile_earth_36: 6961937929417008301
+      Tile_earth_37: -8776790833146946066
+      Tile_earth_38: -1105809119038082048
+      Tile_earth_39: 1877020374278604735
+      Tile_earth_4: 5129360930398469052
+      Tile_earth_40: 3937994844955225833
+      Tile_earth_41: 4104765830716334849
+      Tile_earth_42: -6140881168800802641
+      Tile_earth_43: 8242002843990025252
+      Tile_earth_44: -7315381192854969829
+      Tile_earth_45: -2391431052094017212
+      Tile_earth_46: 3246797372696636395
+      Tile_earth_47: 6098241098871780116
+      Tile_earth_48: 955191130767399518
+      Tile_earth_49: 1461128240023889891
+      Tile_earth_5: -3187111339221860799
+      Tile_earth_50: 9014611121021783133
+      Tile_earth_51: 1317855059601534855
+      Tile_earth_52: 8972562758085403987
+      Tile_earth_53: 5677458273976884855
+      Tile_earth_54: 1453297426192767746
+      Tile_earth_55: 7564606390808524735
+      Tile_earth_56: 4273575858579016860
+      Tile_earth_57: -7560306890505380573
+      Tile_earth_58: 1429866636500365036
+      Tile_earth_59: 1807906752227447853
+      Tile_earth_6: 8018608347464639663
+      Tile_earth_60: -4814061584964152565
+      Tile_earth_61: 944048646201620888
+      Tile_earth_62: 4528189726326314207
+      Tile_earth_63: 875633337583179166
+      Tile_earth_64: -3881948415764550461
+      Tile_earth_65: 7729336933529254682
+      Tile_earth_66: 3145097892231332752
+      Tile_earth_67: 8840847888733578855
+      Tile_earth_68: -5114194409320253982
+      Tile_earth_69: -7241085727832162259
+      Tile_earth_7: 5865457151680776809
+      Tile_earth_70: -5355719316611696636
+      Tile_earth_71: -1876465781345082993
+      Tile_earth_72: -4942132271089061157
+      Tile_earth_73: 2283394932274443100
+      Tile_earth_74: 2657797567736965876
+      Tile_earth_75: -7487602375493197493
+      Tile_earth_76: 4654049396909355184
+      Tile_earth_77: 4827795806671198082
+      Tile_earth_78: 249788665985817097
+      Tile_earth_79: 442663879365315980
+      Tile_earth_8: -1287070926164687176
+      Tile_earth_80: -8078278247304619694
+      Tile_earth_81: 2877957191294164927
+      Tile_earth_82: -1750965491618616863
+      Tile_earth_83: -2194618069603421880
+      Tile_earth_84: 8562892415597220270
+      Tile_earth_85: -8274947379174812206
+      Tile_earth_86: -3895235208225697973
+      Tile_earth_87: -4998828179270139139
+      Tile_earth_88: 7302169063041459866
+      Tile_earth_89: -7064563049576546468
+      Tile_earth_9: 5620226216125778835
+      Tile_earth_90: -2209278086307106550
+      Tile_earth_91: -6107056979425293371
+      Tile_earth_92: -7968692432485799747
+      Tile_earth_93: -9085943897883435112
+      Tile_earth_94: -7010730362505358280
+      Tile_earth_95: -4919390041595390531
+      Tile_earth_96: 7390289710889291198
+      Tile_earth_97: -1600071566966852948
+      Tile_earth_98: -7224347961842168137
+      Tile_earth_99: -8022856094021576811
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

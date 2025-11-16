@@ -1,0 +1,89 @@
+using System;
+using TMPro;
+using Unity.Cinemachine;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+
+public class Transition : MonoBehaviour, IInteract
+{
+    [SerializeField] PolygonCollider2D mapBoundry;
+    CinemachineConfiner2D confiner;
+    [SerializeField] Direction direction;
+    enum Direction { Up, Down, Left, Right };
+
+   [SerializeField]
+   private TextMeshProUGUI interactText;
+
+   private bool interactAllowed;
+
+   private GameObject player;
+    [SerializeField] int distance;
+    private void Awake()
+    {
+        confiner = FindAnyObjectByType<CinemachineConfiner2D>();
+        interactText.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        if(canInteract())
+            beInteracted();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+ if (other.gameObject.CompareTag("Principal"))
+        {
+
+            interactText.gameObject.SetActive(true);
+            interactAllowed = true;
+            player = other.gameObject;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interactAllowed = false;
+        interactText.gameObject.SetActive(false);
+    }
+
+    private void UpdatePlayerPosition(GameObject player)
+    {
+        Vector3 newPos = player.transform.position;
+        switch (direction)
+        {
+            case Direction.Up:
+            newPos.y += distance;
+            break;
+            case Direction.Down:
+            newPos.y -= distance;
+            break;
+            case Direction.Left:
+            newPos.x -= distance;
+            break;
+            case Direction.Right:
+            newPos.x += distance;
+            break;
+
+        }     
+        player.transform.position = newPos; 
+    }
+
+        public void beInteracted()
+    {
+        confiner.BoundingShape2D = mapBoundry;
+        UpdatePlayerPosition(player);
+        interactAllowed = false;
+        interactText.gameObject.SetActive(false);
+    }
+
+    public bool canInteract()
+    {
+        if (interactAllowed&& Input.GetKeyDown(KeyCode.E))
+            return true;
+        return false;
+    }
+}
