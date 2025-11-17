@@ -11,6 +11,9 @@ public class NPC_Dialogue : MonoBehaviour
     public TMP_Text dialogueText, nameText;
     public Image portraitImage;
 
+    public GameObject turtle;  
+    public GameObject manager;  
+
 private int dialogueIndex;
 private bool isTyping,isDialogueActive;
     public void beInteracted()
@@ -95,8 +98,19 @@ private bool isTyping,isDialogueActive;
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        dialogueData.result();
+        result();
+        Destroy(gameObject);
     }
 
+    public void result()
+    {
+        //var manage = manager.GetComponent<PlayerManagerDual>();
+        var turtleFollow = turtle.GetComponent<FollowerGround2D>();
+        var turtleHealth = turtle.GetComponent<TurtleHealth>();
+        manager.SetActive(true);
+        turtleFollow.enabled = true;
+        turtleHealth.enabled = true;
+
+    }
 
 }

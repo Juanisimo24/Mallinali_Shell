@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259861599}
   - component: {fileID: 259861598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   runMultiplier: 1.25
-  jumpForce: 10
+  jumpForce: 8
   chargeSpeed: 10
   chargeDuration: 0.22
   chargeCooldown: 0.6
@@ -542,19 +542,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1bf691ac97e264685bfe5ce97de93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leader: {fileID: 0}
-  leaderRb: {fileID: 0}
-  leaderGroundCheck: {fileID: 0}
-  myGroundCheck: {fileID: 428391421}
+  leader: {fileID: 1853050548}
+  leaderRb: {fileID: 1853050545}
+  leaderGroundCheck: {fileID: 1853050548}
+  myGroundCheck: {fileID: 338462632}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 512
-  followDistance: 3
-  stopBuffer: 0.5
-  maxSpeed: 4
-  accel: 20
-  decel: 30
-  leashDistance: 12
+    m_Bits: 256
+  followDistance: 1
+  stopBuffer: 0.3
+  maxSpeed: 6
+  accel: 30
+  decel: 40
+  leashDistance: 5
   rayDown: 3
   useLeaderSpriteFacing: 1
   fallbackUseLeaderVelocity: 1
@@ -564,6 +564,7 @@ MonoBehaviour:
   leaderGroundRadius: 0.14
   minLeaderJumpVy: 1
   mirrorWindow: 0.15
+  groundCheckDistance: 0.08
 --- !u!61 &338462628
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -625,8 +626,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 1.5
+  m_Material: {fileID: 6200000, guid: dce68c349ddabb54383e26f61d9be935, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -699,7 +700,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 368105077
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 8427598731574646185, guid: d2eb82be604726c41b9c43e0276490a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1251,7 +1252,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.008620679, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -15568,7 +15569,7 @@ MonoBehaviour:
   mapBoundry: {fileID: 646791299}
   direction: 3
   interactText: {fileID: 2112133185}
-  distance: 10
+  distance: 8
 --- !u!61 &820411634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15860,7 +15861,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -16455,6 +16456,8 @@ MonoBehaviour:
   dialogueText: {fileID: 2135250506}
   nameText: {fileID: 994058445}
   portraitImage: {fileID: 1300295782}
+  turtle: {fileID: 338462622}
+  manager: {fileID: 1786370028}
 --- !u!1 &1300295780
 GameObject:
   m_ObjectHideFlags: 0
@@ -16906,7 +16909,7 @@ MonoBehaviour:
   mapBoundry: {fileID: 287667486}
   direction: 2
   interactText: {fileID: 2112133185}
-  distance: 10
+  distance: 8
 --- !u!1 &1786370028
 GameObject:
   m_ObjectHideFlags: 0
@@ -16923,7 +16926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1786370029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16931,7 +16934,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786370028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 085bc584988cd5b4a881f22a3e1f069f, type: 3}
   m_Name: 
@@ -17004,19 +17007,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1bf691ac97e264685bfe5ce97de93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leader: {fileID: 0}
-  leaderRb: {fileID: 0}
-  leaderGroundCheck: {fileID: 0}
-  myGroundCheck: {fileID: 2079545572}
+  leader: {fileID: 338462632}
+  leaderRb: {fileID: 338462629}
+  leaderGroundCheck: {fileID: 428391421}
+  myGroundCheck: {fileID: 1853050548}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  followDistance: 3
-  stopBuffer: 0.5
+  followDistance: 0.9
+  stopBuffer: 0.3
   maxSpeed: 4
   accel: 20
   decel: 30
-  leashDistance: 12
+  leashDistance: 5
   rayDown: 3
   useLeaderSpriteFacing: 1
   fallbackUseLeaderVelocity: 1
@@ -17026,6 +17029,7 @@ MonoBehaviour:
   leaderGroundRadius: 0.14
   minLeaderJumpVy: 1
   mirrorWindow: 0.15
+  groundCheckDistance: 0.08
 --- !u!114 &1853050543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17067,7 +17071,7 @@ MonoBehaviour:
   resetDashOnGround: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   groundSkinWidth: 0.06
   groundCheckDistance: 0.08
   attackPoint: {fileID: 293408477}
@@ -17582,11 +17586,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 259861599}
   - {fileID: 1853050548}
+  - {fileID: 338462632}
   - {fileID: 650668309}
   - {fileID: 1713403181}
   - {fileID: 1309250435}
   - {fileID: 2114217059}
-  - {fileID: 338462632}
   - {fileID: 689200563}
   - {fileID: 1226992288}
   - {fileID: 46854645}

@@ -34,7 +34,7 @@ public class Transition : MonoBehaviour, IInteract
 
     private void OnTriggerEnter2D(Collider2D other)
     {
- if (other.gameObject.CompareTag("Principal"))
+ if (other.gameObject.CompareTag("Principal")||other.gameObject.CompareTag("Principal"))
         {
 
             interactText.gameObject.SetActive(true);

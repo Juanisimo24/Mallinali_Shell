@@ -18,7 +18,7 @@ public class FollowerGround2D : MonoBehaviour
     public float decel = 30f;               // Desacelerar al frenar
 
     [Header("Catchup (si se quedó muy atrás)")]
-    public float leashDistance = 12f;       // Si supera esto, warp detrás del líder
+    public float leashDistance = 5f;       // Si supera esto, warp detrás del líder
     public float rayDown = 3f;              // Raycast hacia abajo para pegar al piso al warpear
 
     [Header("Detección de frente del líder")]
@@ -32,9 +32,10 @@ public class FollowerGround2D : MonoBehaviour
     public float leaderGroundRadius = 0.14f;// Radio ground del líder (si se usa groundCheck)
     public float minLeaderJumpVy = 1.0f;    // Mínimo Vy para considerar "salto" (evita caídas/bordes)
     public float mirrorWindow = 0.12f;      // Ventana tras salto del líder para replicar
-
+public float groundCheckDistance = 0.08f;
     private Rigidbody2D rb;
     private Collider2D col;
+    private Collider2D leadercol;
     private SpriteRenderer leaderSR;
     private Rigidbody2D cachedLeaderRb;
 
@@ -47,6 +48,7 @@ public class FollowerGround2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        leadercol= leader.gameObject.GetComponent<Collider2D>();
         rb.freezeRotation = true;
 
         if (leader != null)
@@ -70,10 +72,11 @@ public class FollowerGround2D : MonoBehaviour
         if (leader == null) return;
 
         // Ground states
-        myGrounded = IsGrounded(myGroundCheck ? myGroundCheck.position : (Vector2)transform.position, groundRadius);
-
-        if (leaderGroundCheck != null)
-            leaderGrounded = IsGrounded(leaderGroundCheck.position, leaderGroundRadius);
+        myGrounded = IsGrounded(col);
+        Debug.Log("Me Grounded: "+myGrounded);
+        if (leaderGroundCheck != null){
+            leaderGrounded = IsGrounded(leadercol);
+            Debug.Log("Leader Grounded: "+leaderGrounded);}
         else if (cachedLeaderRb != null)
             leaderGrounded = Mathf.Abs(cachedLeaderRb.linearVelocity.y) < 0.01f; // fallback aproximado
         else
@@ -82,8 +85,8 @@ public class FollowerGround2D : MonoBehaviour
         // Detectar salto del líder por transición suelo->aire con Vy positiva
         if (mirrorJump && cachedLeaderRb != null)
         {
-            bool leaderJustJumped = (leaderWasGrounded && !leaderGrounded && cachedLeaderRb.linearVelocity.y > minLeaderJumpVy);
-
+            
+            bool leaderJustJumped = leaderWasGrounded && !leaderGrounded && cachedLeaderRb.linearVelocity.y > minLeaderJumpVy;
             if (leaderJustJumped)
             {
                 timeSinceLeaderJump = 0f;
@@ -140,9 +143,15 @@ public class FollowerGround2D : MonoBehaviour
     }
 
     // ---------- Utilidades ----------
-    bool IsGrounded(Vector2 pos, float radius)
+    bool IsGrounded(Collider2D collider)
     {
-        return Physics2D.OverlapCircle(pos, radius, groundLayer);
+        Bounds b = collider.bounds;
+        Vector2 size = new Vector2(b.size.x , b.size.y);
+        Vector2 origin = new Vector2(b.center.x, b.min.y + size.y * 0.5f);
+
+        RaycastHit2D hit = Physics2D.BoxCast(origin, size, 0f, Vector2.down, groundCheckDistance, groundLayer);
+        return hit.collider != null;
+    
     }
 
     void DoJump(float force)
