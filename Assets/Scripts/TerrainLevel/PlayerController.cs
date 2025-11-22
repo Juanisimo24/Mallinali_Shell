@@ -11,19 +11,18 @@ public class PlayerController : MonoBehaviour
 
     [Header("Salto")]
     public float jumpForce = 7f;
+    public int maxJumps = 2; // 👈 Doble salto (2 saltos permitidos)
 
     [Header("Dash (Ctrl)")]
-    public float dashSpeed = 14f;          // velocidad horizontal del dash
-    public float dashDuration = 0.18f;     // duración del dash en segundos
-    public float dashCooldown = 0.35f;     // cooldown entre dashes
-    public int maxAirDashes = 1;           // dashes permitidos en aire
-    public bool resetDashOnGround = true;  // reponer dashes al tocar suelo
+    public float dashSpeed = 14f;
+    public float dashDuration = 0.18f;
+    public float dashCooldown = 0.35f;
+    public int maxAirDashes = 1;
+    public bool resetDashOnGround = true;
 
     [Header("Ground Check (BoxCast)")]
     public LayerMask groundLayer;
-    [Tooltip("Extra grosor lateral del boxcast (reduce falsos negativos en bordes)")]
     public float groundSkinWidth = 0.06f;
-    [Tooltip("Distancia hacia abajo para el boxcast")]
     public float groundCheckDistance = 0.08f;
 
     [Header("Combate")]
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
     [Header("Gestión externa")]
     public bool canControl = true;
 
-    // ---------- FEEL DEL SALTO ----------
     [Header("Jump Feel")]
     public float coyoteTime = 0.12f;
     public float jumpBufferTime = 0.12f;
@@ -55,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isDashing;
     private int airDashesUsed;
+    private int jumpsUsed;
 
     // Timers
     private float dashTimer;
@@ -62,7 +61,7 @@ public class PlayerController : MonoBehaviour
     private float coyoteCounter;
     private float jumpBufferCounter;
 
-    // Input cache
+    // Input
     private float moveInput;
     private bool jumpPressed;
     private bool jumpHeld;
@@ -71,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     // Otros
     private float baseGravityScale;
-    private int facing = 1; // 1 derecha, -1 izquierda
+    private int facing = 1;
 
     void Awake()
     {
@@ -87,13 +86,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // --- Leer inputs solo si puedo controlar ---
         if (canControl)
         {
-            moveInput     = Input.GetAxisRaw("Horizontal");
-            jumpPressed   = Input.GetButtonDown("Jump");
-            jumpHeld      = Input.GetButton("Jump");
-            dashPressed   = Input.GetKeyDown(KeyCode.LeftControl);
+            moveInput = Input.GetAxisRaw("Horizontal");
+            jumpPressed = Input.GetButtonDown("Jump");
+            jumpHeld = Input.GetButton("Jump");
+            dashPressed = Input.GetKeyDown(KeyCode.LeftControl);
             attackPressed = Input.GetButtonDown("Fire1");
         }
         else
@@ -102,37 +100,40 @@ public class PlayerController : MonoBehaviour
             jumpPressed = jumpHeld = dashPressed = attackPressed = false;
         }
 
-        // --- Ground Check robusto (BoxCast a partir del collider) ---
+        // --- Ground check ---
         isGrounded = CheckGrounded();
 
-        // Reset de dashes al tocar suelo
-        if (isGrounded && resetDashOnGround) airDashesUsed = 0;
+        // Reset de saltos y dashes al tocar suelo
+        if (isGrounded)
+        {
+            jumpsUsed = 0;
+            if (resetDashOnGround) airDashesUsed = 0;
+        }
 
-        // --- Coyote y Jump Buffer ---
+        // Coyote / buffer
         if (isGrounded) coyoteCounter = coyoteTime;
-        else            coyoteCounter -= Time.deltaTime;
+        else coyoteCounter -= Time.deltaTime;
 
         if (jumpPressed) jumpBufferCounter = jumpBufferTime;
-        else             jumpBufferCounter -= Time.deltaTime;
+        else jumpBufferCounter -= Time.deltaTime;
 
-        // Intento de salto usando buffer + coyote (si no estoy en dash)
-        if (jumpBufferCounter > 0f && coyoteCounter > 0f && !isDashing)
+        // Intentar salto (doble o normal)
+        if (jumpBufferCounter > 0f && (coyoteCounter > 0f || jumpsUsed < maxJumps - 1) && !isDashing)
         {
             DoJump();
             jumpBufferCounter = 0f;
         }
 
-        // --- Ataque (si aplica a tu lógica actual) ---
+        // Ataque
         if (attackPressed && combat != null && manager != null)
         {
             combat.PerformAttack();
             manager.RegisterAttack();
         }
 
-        // --- Cooldown de dash ---
+        // Dash
         if (dashCooldownTimer > 0f) dashCooldownTimer -= Time.deltaTime;
 
-        // --- Activación de dash (en aire o tierra) ---
         if (dashPressed && !isDashing && dashCooldownTimer <= 0f)
         {
             bool canDashNow = isGrounded || (airDashesUsed < maxAirDashes);
@@ -143,49 +144,52 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // --- Fin de dash por tiempo ---
         if (isDashing)
         {
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0f) EndDash();
         }
-
-        // --- Gravedad dinámica (no aplicar mientras dashing) ---
-        if (!isDashing) ApplyBetterGravity();
     }
 
     void FixedUpdate()
     {
-        // --- Movimiento horizontal (no cuando dashing) ---
+        // --- Movimiento horizontal ---
         if (!isDashing)
         {
-            float finalSpeed = (Input.GetKey(KeyCode.LeftShift) && canControl) ? speed * runMultiplier : speed;
-            float targetVX = moveInput * finalSpeed;
-            rb.linearVelocity = new Vector2(targetVX, rb.linearVelocity.y);
+            // 👇 No correr en el aire
+            float currentSpeed = isGrounded && Input.GetKey(KeyCode.LeftShift) ? speed * runMultiplier : speed;
 
-            // Voltear (por escala, para que hijos sigan mirando al frente)
-            if (moveInput > 0.01f)      facing = 1;
+            float targetVX = moveInput * currentSpeed;
+            float smoothedVX = Mathf.MoveTowards(rb.linearVelocity.x, targetVX, 20f * Time.fixedDeltaTime); // aceleración suave
+            rb.linearVelocity = new Vector2(smoothedVX, rb.linearVelocity.y);
+
+            // Flip
+            if (moveInput > 0.01f) facing = 1;
             else if (moveInput < -0.01f) facing = -1;
 
             var ls = transform.localScale;
             transform.localScale = new Vector3(facing * Mathf.Abs(ls.x), ls.y, ls.z);
         }
 
-        // --- Clamp de caída ---
+        // --- Aplicar mejor gravedad (AddForce) ---
+        if (!isDashing)
+            ApplyBetterGravity();
+
+        // Clamp de caída
         if (rb.linearVelocity.y < -maxFallSpeed)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxFallSpeed);
     }
 
-    // ----------------- Acciones -----------------
+    // ----------------- ACCIONES -----------------
     void DoJump()
     {
-        // Reinicia vertical, aplica impulso
+        // Reinicia velocidad vertical antes de saltar
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
-        // Consumir coyote y buffer
         coyoteCounter = 0f;
         jumpBufferCounter = 0f;
+        jumpsUsed++;
 
         OnJump?.Invoke();
     }
@@ -196,35 +200,23 @@ public class PlayerController : MonoBehaviour
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
 
-        // Direccion del dash:
-        // Si hay input, úsalo; si no, usa el facing actual
         int dashDir = facing;
         if (Mathf.Abs(moveInput) > 0.01f) dashDir = moveInput > 0 ? 1 : -1;
 
-        // Congelar gravedad durante dash (para un “slice” limpio)
-        rb.gravityScale = 0f;
-
-        // Dar velocidad horizontal fuerte, limpias Y para un dash recto
         rb.linearVelocity = new Vector2(dashDir * dashSpeed, 0f);
     }
 
     void EndDash()
     {
         isDashing = false;
-        rb.gravityScale = baseGravityScale;
-
-        // Mantener el momentum horizontal, pero no infinito
-        rb.linearVelocity = new Vector2(Mathf.Clamp(rb.linearVelocity.x, -dashSpeed, dashSpeed), rb.linearVelocity.y);
     }
 
-    // ----------------- Utilidades -----------------
+    // ----------------- UTILIDADES -----------------
     bool CheckGrounded()
     {
-        // BoxCast usando el tamaño del collider, con un “skin” horizontal
         Bounds b = col.bounds;
-        Vector2 size = new Vector2(b.size.x , b.size.y);
-        Vector2 origin = new Vector2(b.center.x, b.min.y + size.y * 0.5f);
-
+        Vector2 origin = b.center;
+        Vector2 size = new Vector2(b.size.x - groundSkinWidth * 2f, b.size.y);
         RaycastHit2D hit = Physics2D.BoxCast(origin, size, 0f, Vector2.down, groundCheckDistance, groundLayer);
         return hit.collider != null;
     }
@@ -233,23 +225,17 @@ public class PlayerController : MonoBehaviour
     {
         float vy = rb.linearVelocity.y;
         bool nearApex = Mathf.Abs(vy) < apexThreshold && !isGrounded;
+        float gravity = Physics2D.gravity.y * rb.mass; // base gravity force
+        float multiplier = 1f;
 
         if (vy < -0.01f)
-        {
-            rb.gravityScale = baseGravityScale * fallGravityMultiplier;
-        }
+            multiplier = fallGravityMultiplier;
         else if (vy > 0.01f && !jumpHeld)
-        {
-            rb.gravityScale = baseGravityScale * lowJumpGravityMultiplier;
-        }
+            multiplier = lowJumpGravityMultiplier;
         else if (nearApex)
-        {
-            rb.gravityScale = baseGravityScale * apexGravityMultiplier;
-        }
-        else
-        {
-            rb.gravityScale = baseGravityScale;
-        }
+            multiplier = apexGravityMultiplier;
+
+        rb.AddForce(Vector2.up * gravity * (multiplier - 1f)); // add extra gravity without touching gravityScale
     }
 
     void OnDrawGizmosSelected()
@@ -257,10 +243,9 @@ public class PlayerController : MonoBehaviour
         if (col == null) col = GetComponent<Collider2D>();
         if (col == null) return;
 
-        // Gizmo del BoxCast de suelo
         Bounds b = col.bounds;
         Vector2 size = new Vector2(b.size.x - groundSkinWidth * 2f, b.size.y);
-        Vector2 origin = new Vector2(b.center.x, b.min.y + size.y * 0.5f);
+        Vector2 origin = b.center;
         Vector2 down = Vector2.down * groundCheckDistance;
 
         Gizmos.color = Color.green;
@@ -269,7 +254,6 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireCube(origin + down, size);
     }
 
-    // Métodos auxiliares para el manager
     public void SetControl(bool enabledControl)
     {
         canControl = enabledControl;

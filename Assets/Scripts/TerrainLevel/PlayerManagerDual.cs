@@ -25,7 +25,9 @@ public class PlayerManagerDual : MonoBehaviour
 
     void Update()
     {
-        underWater = floorsito.getUnderWater();
+        if (floorsito != null)
+            underWater = floorsito.getUnderWater();
+            
         if (Input.GetKeyDown(switchKey))
             Switch();
     }
@@ -119,5 +121,9 @@ public class PlayerManagerDual : MonoBehaviour
     public GameObject GetActive()
     {
         return active;
+    }
+        public GameObject GetFollower()
+    {
+        return follower;
     }
 }

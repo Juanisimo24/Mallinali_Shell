@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Transition : MonoBehaviour, IInteract
+public class TransitionNI : MonoBehaviour
 {
     [SerializeField] PolygonCollider2D mapBoundry;
     CinemachineConfiner2D confiner;
@@ -14,44 +14,25 @@ public class Transition : MonoBehaviour, IInteract
     enum Direction { Up, Down, Left, Right };
 
    [SerializeField]
-   private TextMeshProUGUI interactText;
-
-   private bool interactAllowed;
 
    private GameObject player;
-   private bool haveText;
     [SerializeField] int distance;
     private void Awake()
     {
         confiner = FindAnyObjectByType<CinemachineConfiner2D>();
-        haveText = interactText!=null;
-        if(haveText)
-            interactText.gameObject.SetActive(false);
+      
     }
 
-    void Update()
-    {
-        if(canInteract())
-            beInteracted();
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
- if (other.gameObject.CompareTag("Principal")||other.gameObject.CompareTag("Principal"))
+ if (other.gameObject.CompareTag("Principal")||other.gameObject.CompareTag("Tortuga"))
         {
-            if(haveText)
-                interactText.gameObject.SetActive(true);
-            interactAllowed = true;
             player = other.gameObject;
+            beInteracted();
         }
 
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        interactAllowed = false;
-        if(haveText)
-            interactText.gameObject.SetActive(false);
     }
 
     private void UpdatePlayerPosition(GameObject player)
@@ -80,15 +61,7 @@ public class Transition : MonoBehaviour, IInteract
     {
         confiner.BoundingShape2D = mapBoundry;
         UpdatePlayerPosition(player);
-        interactAllowed = false;
-        if(haveText)
-            interactText.gameObject.SetActive(false);
+
     }
 
-    public bool canInteract()
-    {
-        if (interactAllowed&& Input.GetKeyDown(KeyCode.E))
-            return true;
-        return false;
-    }
 }

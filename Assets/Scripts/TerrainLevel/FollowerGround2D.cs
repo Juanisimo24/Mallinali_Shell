@@ -4,49 +4,56 @@ using UnityEngine;
 public class FollowerGround2D : MonoBehaviour
 {
     [Header("Referencias")]
-    public Transform leader;                // Asignado por el manager
-    public Rigidbody2D leaderRb;            // Recomendado: Rigidbody del líder
-    public Transform leaderGroundCheck;     // Opcional: groundCheck del líder (mejor)
-    public Transform myGroundCheck;         // Recomendado: groundCheck del seguidor
-    public LayerMask groundLayer;           // Capa del piso
+    public Transform leader;
+    public Rigidbody2D leaderRb;
+    public Transform leaderGroundCheck;
+    public Transform myGroundCheck;
+    public LayerMask groundLayer;
 
     [Header("Follow (solo X)")]
-    public float followDistance = 3.0f;     // Distancia detrás del líder
-    public float stopBuffer = 0.5f;         // Zona muerta para no "bailar"
-    public float maxSpeed = 4.0f;           // Velocidad máx X
-    public float accel = 20f;               // Acelerar hacia vX objetivo
-    public float decel = 30f;               // Desacelerar al frenar
+    public float followDistance = 3.0f;
+    public float stopBuffer = 0.5f;
+    public float maxSpeed = 4.0f;
+    public float accel = 20f;
+    public float decel = 30f;
 
-    [Header("Catchup (si se quedó muy atrás)")]
-    public float leashDistance = 12f;       // Si supera esto, warp detrás del líder
-    public float rayDown = 3f;              // Raycast hacia abajo para pegar al piso al warpear
+    [Header("Catchup")]
+    public float leashDistance = 5f;
+    public float rayDown = 3f;
 
     [Header("Detección de frente del líder")]
     public bool useLeaderSpriteFacing = true;
     public bool fallbackUseLeaderVelocity = true;
 
-    [Header("Salto espejo (estricto)")]
+    [Header("Salto espejo (ahora con doble salto)")]
     public bool mirrorJump = true;
-    public float jumpForce = 7f;            // Fuerza de salto del seguidor
-    public float groundRadius = 0.14f;      // Radio ground del seguidor
-    public float leaderGroundRadius = 0.14f;// Radio ground del líder (si se usa groundCheck)
-    public float minLeaderJumpVy = 1.0f;    // Mínimo Vy para considerar "salto" (evita caídas/bordes)
-    public float mirrorWindow = 0.12f;      // Ventana tras salto del líder para replicar
+    public float jumpForce = 7f;
+    public int maxJumps = 2; // 👈 nuevo: doble salto
+    public float groundRadius = 0.14f;
+    public float leaderGroundRadius = 0.14f;
+    public float minLeaderJumpVy = 1.0f;
+    public float mirrorWindow = 0.12f;
+    public float groundCheckDistance = 0.08f;
 
     private Rigidbody2D rb;
     private Collider2D col;
+    private Collider2D leadercol;
     private SpriteRenderer leaderSR;
     private Rigidbody2D cachedLeaderRb;
 
     private bool myGrounded;
     private bool leaderGrounded;
-    private bool leaderWasGrounded;         // frame anterior
+    private bool leaderWasGrounded;
     private float timeSinceLeaderJump = 999f;
+
+    // 👇 contador de saltos
+    private int jumpsUsed = 0;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        leadercol = leader.gameObject.GetComponent<Collider2D>();
         rb.freezeRotation = true;
 
         if (leader != null)
@@ -69,29 +76,30 @@ public class FollowerGround2D : MonoBehaviour
     {
         if (leader == null) return;
 
-        // Ground states
-        myGrounded = IsGrounded(myGroundCheck ? myGroundCheck.position : (Vector2)transform.position, groundRadius);
-
+        // Ground checks
+        myGrounded = IsGrounded(col);
         if (leaderGroundCheck != null)
-            leaderGrounded = IsGrounded(leaderGroundCheck.position, leaderGroundRadius);
+            leaderGrounded = IsGrounded(leadercol);
         else if (cachedLeaderRb != null)
-            leaderGrounded = Mathf.Abs(cachedLeaderRb.linearVelocity.y) < 0.01f; // fallback aproximado
+            leaderGrounded = Mathf.Abs(cachedLeaderRb.linearVelocity.y) < 0.01f;
         else
             leaderGrounded = false;
 
-        // Detectar salto del líder por transición suelo->aire con Vy positiva
+        // Reset salto al tocar suelo
+        if (myGrounded)
+            jumpsUsed = 0;
+
+        // Detectar salto del líder
         if (mirrorJump && cachedLeaderRb != null)
         {
-            bool leaderJustJumped = (leaderWasGrounded && !leaderGrounded && cachedLeaderRb.linearVelocity.y > minLeaderJumpVy);
-
+            bool leaderJustJumped = cachedLeaderRb.linearVelocity.y > minLeaderJumpVy;
             if (leaderJustJumped)
-            {
                 timeSinceLeaderJump = 0f;
-            }
 
-            // Ventana para replicar el salto (solo si el follower está en el suelo)
             timeSinceLeaderJump += Time.deltaTime;
-            if (timeSinceLeaderJump <= mirrorWindow && myGrounded)
+
+            // doble salto: permite replicar salto si tiene saltos disponibles
+            if (timeSinceLeaderJump <= mirrorWindow && jumpsUsed < maxJumps)
             {
                 DoJump(jumpForce);
                 timeSinceLeaderJump = 999f; // cerrar ventana
@@ -105,24 +113,23 @@ public class FollowerGround2D : MonoBehaviour
     {
         if (leader == null) return;
 
-        // Dirección del líder (por sprite o por velocidad)
+        // Dirección del líder
         int facingDir = 1;
         if (useLeaderSpriteFacing && leaderSR != null)
             facingDir = leaderSR.flipX ? -1 : 1;
-        else if (fallbackUseLeaderVelocity && (cachedLeaderRb != null))
+        else if (fallbackUseLeaderVelocity && cachedLeaderRb != null)
             facingDir = (cachedLeaderRb.linearVelocity.x >= 0f) ? 1 : -1;
 
-        // Objetivo X (detrás del líder)
+        // Objetivo detrás del líder
         float targetX = leader.position.x - facingDir * followDistance;
 
-        // Warp si está muy lejos
+        // Warp si se aleja demasiado
         if (Mathf.Abs(leader.position.x - rb.position.x) > leashDistance)
         {
             WarpBehindLeader(facingDir);
             return;
         }
 
-        // Control P simple con histéresis
         float deltaX = targetX - rb.position.x;
         float desiredVX = 0f;
 
@@ -132,7 +139,6 @@ public class FollowerGround2D : MonoBehaviour
             desiredVX = Mathf.Clamp(pOut, -maxSpeed, maxSpeed);
         }
 
-        // Aceleración/desaceleración en X, preservando Y
         float currentVX = rb.linearVelocity.x;
         float rate = (Mathf.Abs(desiredVX) > Mathf.Abs(currentVX)) ? accel : decel;
         float newVX = Mathf.MoveTowards(currentVX, desiredVX, rate * Time.fixedDeltaTime);
@@ -140,16 +146,22 @@ public class FollowerGround2D : MonoBehaviour
     }
 
     // ---------- Utilidades ----------
-    bool IsGrounded(Vector2 pos, float radius)
+    bool IsGrounded(Collider2D collider)
     {
-        return Physics2D.OverlapCircle(pos, radius, groundLayer);
+        Bounds b = collider.bounds;
+        Vector2 size = new Vector2(b.size.x, b.size.y);
+        Vector2 origin = new Vector2(b.center.x, b.min.y + size.y * 0.5f);
+
+        RaycastHit2D hit = Physics2D.BoxCast(origin, size, 0f, Vector2.down, groundCheckDistance, groundLayer);
+        return hit.collider != null;
     }
 
     void DoJump(float force)
     {
-        if (!myGrounded) return;                 // jamás saltar si no está en el suelo
+        if (jumpsUsed >= maxJumps) return; // permite hasta doble salto
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        jumpsUsed++;
     }
 
     void WarpBehindLeader(int facingDir)
@@ -165,8 +177,8 @@ public class FollowerGround2D : MonoBehaviour
     float GetColliderHalfHeight()
     {
         if (col is CapsuleCollider2D cap) return cap.size.y * 0.5f;
-        if (col is BoxCollider2D box)     return box.size.y * 0.5f;
-        if (col is CircleCollider2D cir)  return cir.radius;
+        if (col is BoxCollider2D box) return box.size.y * 0.5f;
+        if (col is CircleCollider2D cir) return cir.radius;
         return 0.5f;
     }
 
