@@ -12,6 +12,7 @@ public class NPC_Dialogue : MonoBehaviour
     public Image portraitImage;
 
     public GameObject turtle;  
+    private GameObject player;  
     public GameObject manager;  
 
 private int dialogueIndex;
@@ -31,8 +32,10 @@ private bool isTyping,isDialogueActive;
         }
     }
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        var control = other.GetComponent<PlayerController>();
+        control.enabled=false;
         isDialogueActive=true;
         StartDialogue();
     }
@@ -94,6 +97,8 @@ private bool isTyping,isDialogueActive;
 
     public void EndDialogue()
     {
+        //var control = player.GetComponent<PlayerController>();
+        //control.enabled=true;
         StopAllCoroutines();
         isDialogueActive = false;
         dialogueText.SetText("");

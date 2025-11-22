@@ -14,40 +14,25 @@ public class TransitionNI : MonoBehaviour
     enum Direction { Up, Down, Left, Right };
 
    [SerializeField]
-   private TextMeshProUGUI interactText;
-
-   private bool interactAllowed;
 
    private GameObject player;
-   private bool haveText;
     [SerializeField] int distance;
     private void Awake()
     {
         confiner = FindAnyObjectByType<CinemachineConfiner2D>();
-        haveText = interactText!=null;
-        if(haveText)
-            interactText.gameObject.SetActive(false);
+      
     }
 
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
- if (other.gameObject.CompareTag("Principal")||other.gameObject.CompareTag("Principal"))
+ if (other.gameObject.CompareTag("Principal")||other.gameObject.CompareTag("Tortuga"))
         {
-            if(haveText)
-                interactText.gameObject.SetActive(true);
             player = other.gameObject;
             beInteracted();
         }
 
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        interactAllowed = false;
-        if(haveText)
-            interactText.gameObject.SetActive(false);
     }
 
     private void UpdatePlayerPosition(GameObject player)
@@ -76,8 +61,7 @@ public class TransitionNI : MonoBehaviour
     {
         confiner.BoundingShape2D = mapBoundry;
         UpdatePlayerPosition(player);
-        if(haveText)
-            interactText.gameObject.SetActive(false);
+
     }
 
 }
