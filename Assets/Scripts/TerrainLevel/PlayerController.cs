@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
     private PlayerManagerDual manager;
     private PlayerCombat combat;
 
+    private Animator animator;
+
     // Estados
     private bool isGrounded;
     private bool isDashing;
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         combat = GetComponent<PlayerCombat>();
         manager = FindObjectOfType<PlayerManagerDual>();
+        animator = GetComponent<Animator>();
 
         rb.freezeRotation = true;
         baseGravityScale = Mathf.Max(0.0001f, rb.gravityScale);
@@ -164,9 +167,17 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(smoothedVX, rb.linearVelocity.y);
 
             // Flip
-            if (moveInput > 0.01f) facing = 1;
-            else if (moveInput < -0.01f) facing = -1;
-
+            if (moveInput > 0.01f){ 
+                facing = 1;
+                animator.SetBool("iswalking",true);}
+            else if (moveInput < -0.01f){
+                 facing = -1;
+                 animator.SetBool("iswalking",true);}
+            else
+            {
+                animator.SetBool("iswalking",false);
+            }
+            
             var ls = transform.localScale;
             transform.localScale = new Vector3(facing * Mathf.Abs(ls.x), ls.y, ls.z);
         }
@@ -183,6 +194,7 @@ public class PlayerController : MonoBehaviour
     // ----------------- ACCIONES -----------------
     void DoJump()
     {
+        animator.SetBool("iswalking",false);
         // Reinicia velocidad vertical antes de saltar
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

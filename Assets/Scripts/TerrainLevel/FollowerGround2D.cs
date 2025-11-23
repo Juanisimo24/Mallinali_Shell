@@ -1,59 +1,50 @@
 using UnityEngine;
 
+/// <summary>
+/// Reliable 2D follower that walks and jumps to keep up with the player.
+/// Works across tile-based platforms and vertical jumps.
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class FollowerGround2D : MonoBehaviour
 {
-    [Header("Referencias")]
+    [Header("References")]
     public Transform leader;
     public Rigidbody2D leaderRb;
-    public Transform leaderGroundCheck;
-    public Transform myGroundCheck;
     public LayerMask groundLayer;
 
-    [Header("Follow (solo X)")]
-    public float followDistance = 3.0f;
-    public float stopBuffer = 0.5f;
-    public float maxSpeed = 4.0f;
+    [Header("Follow Settings")]
+    public float followDistance = 2.0f;
+    public float stopBuffer = 0.3f;
+    public float maxSpeed = 6f;
     public float accel = 20f;
-    public float decel = 30f;
+    public float decel = 25f;
 
-    [Header("Catchup")]
-    public float leashDistance = 5f;
-    public float rayDown = 3f;
+    [Header("Jump Settings")]
+    public float jumpForce = 7.5f;
+    public float groundCheckDistance = 0.1f;
+    public float frontRayDistance = 0.6f;
+    public float upRayDistance = 2f;
+    public float gapJumpCooldown = 0.35f;
 
-    [Header("Detección de frente del líder")]
-    public bool useLeaderSpriteFacing = true;
-    public bool fallbackUseLeaderVelocity = true;
-
-    [Header("Salto espejo (ahora con doble salto)")]
-    public bool mirrorJump = true;
-    public float jumpForce = 7f;
-    public int maxJumps = 2; // 👈 nuevo: doble salto
-    public float groundRadius = 0.14f;
-    public float leaderGroundRadius = 0.14f;
-    public float minLeaderJumpVy = 1.0f;
-    public float mirrorWindow = 0.12f;
-    public float groundCheckDistance = 0.08f;
+    [Header("Leash Settings")]
+    public float leashDistance = 8f;
+    public float warpYOffset = 1.0f;
 
     private Rigidbody2D rb;
     private Collider2D col;
-    private Collider2D leadercol;
     private SpriteRenderer leaderSR;
     private Rigidbody2D cachedLeaderRb;
 
     private bool myGrounded;
-    private bool leaderGrounded;
-    private bool leaderWasGrounded;
-    private float timeSinceLeaderJump = 999f;
-
-    // 👇 contador de saltos
-    private int jumpsUsed = 0;
+    private bool isWarping = false;
+    private int facingDir = 1;
+    private float halfHeight;
+    private float lastJumpTime = -10f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        leadercol = leader.gameObject.GetComponent<Collider2D>();
         rb.freezeRotation = true;
 
         if (leader != null)
@@ -61,79 +52,38 @@ public class FollowerGround2D : MonoBehaviour
             leaderSR = leader.GetComponentInChildren<SpriteRenderer>();
             cachedLeaderRb = leaderRb != null ? leaderRb : leader.GetComponent<Rigidbody2D>();
         }
-    }
 
-    void OnEnable()
-    {
-        if (leader != null)
-        {
-            leaderSR = leader.GetComponentInChildren<SpriteRenderer>();
-            cachedLeaderRb = leaderRb != null ? leaderRb : leader.GetComponent<Rigidbody2D>();
-        }
-    }
-
-    void Update()
-    {
-        if (leader == null) return;
-
-        // Ground checks
-        myGrounded = IsGrounded(col);
-        if (leaderGroundCheck != null)
-            leaderGrounded = IsGrounded(leadercol);
-        else if (cachedLeaderRb != null)
-            leaderGrounded = Mathf.Abs(cachedLeaderRb.linearVelocity.y) < 0.01f;
+        if (col is BoxCollider2D box)
+            halfHeight = box.size.y * 0.5f;
+        else if (col is CapsuleCollider2D cap)
+            halfHeight = cap.size.y * 0.5f;
+        else if (col is CircleCollider2D cir)
+            halfHeight = cir.radius;
         else
-            leaderGrounded = false;
-
-        // Reset salto al tocar suelo
-        if (myGrounded)
-            jumpsUsed = 0;
-
-        // Detectar salto del líder
-        if (mirrorJump && cachedLeaderRb != null)
-        {
-            bool leaderJustJumped = cachedLeaderRb.linearVelocity.y > minLeaderJumpVy;
-            if (leaderJustJumped)
-                timeSinceLeaderJump = 0f;
-
-            timeSinceLeaderJump += Time.deltaTime;
-
-            // doble salto: permite replicar salto si tiene saltos disponibles
-            if (timeSinceLeaderJump <= mirrorWindow && jumpsUsed < maxJumps)
-            {
-                DoJump(jumpForce);
-                timeSinceLeaderJump = 999f; // cerrar ventana
-            }
-        }
-
-        leaderWasGrounded = leaderGrounded;
+            halfHeight = 0.5f;
     }
 
     void FixedUpdate()
     {
-        if (leader == null) return;
+        if (leader == null || isWarping) return;
 
-        // Dirección del líder
-        int facingDir = 1;
-        if (useLeaderSpriteFacing && leaderSR != null)
-            facingDir = leaderSR.flipX ? -1 : 1;
-        else if (fallbackUseLeaderVelocity && cachedLeaderRb != null)
-            facingDir = (cachedLeaderRb.linearVelocity.x >= 0f) ? 1 : -1;
+        UpdateFacing();
+        UpdateGrounded();
 
-        // Objetivo detrás del líder
         float targetX = leader.position.x - facingDir * followDistance;
+        float deltaX = targetX - rb.position.x;
+        float absDeltaX = Mathf.Abs(deltaX);
 
-        // Warp si se aleja demasiado
-        if (Mathf.Abs(leader.position.x - rb.position.x) > leashDistance)
+        // Warp safety
+        if (absDeltaX > leashDistance)
         {
-            WarpBehindLeader(facingDir);
+            SoftWarpBehindLeader();
             return;
         }
 
-        float deltaX = targetX - rb.position.x;
+        // Horizontal move
         float desiredVX = 0f;
-
-        if (Mathf.Abs(deltaX) > stopBuffer)
+        if (absDeltaX > stopBuffer)
         {
             float pOut = deltaX * 5f;
             desiredVX = Mathf.Clamp(pOut, -maxSpeed, maxSpeed);
@@ -143,49 +93,99 @@ public class FollowerGround2D : MonoBehaviour
         float rate = (Mathf.Abs(desiredVX) > Mathf.Abs(currentVX)) ? accel : decel;
         float newVX = Mathf.MoveTowards(currentVX, desiredVX, rate * Time.fixedDeltaTime);
         rb.linearVelocity = new Vector2(newVX, rb.linearVelocity.y);
+
+        // Handle jump logic only when grounded
+        if (myGrounded)
+            HandleSmartJump();
     }
 
-    // ---------- Utilidades ----------
-    bool IsGrounded(Collider2D collider)
-    {
-        Bounds b = collider.bounds;
-        Vector2 size = new Vector2(b.size.x, b.size.y);
-        Vector2 origin = new Vector2(b.center.x, b.min.y + size.y * 0.5f);
+    // ------------------ Grounding & Facing ------------------
 
-        RaycastHit2D hit = Physics2D.BoxCast(origin, size, 0f, Vector2.down, groundCheckDistance, groundLayer);
-        return hit.collider != null;
+    void UpdateGrounded()
+    {
+        Vector2 origin = new Vector2(rb.position.x, rb.position.y - halfHeight);
+        myGrounded = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
     }
 
-    void DoJump(float force)
+    void UpdateFacing()
     {
-        if (jumpsUsed >= maxJumps) return; // permite hasta doble salto
+        if (leaderSR != null)
+            facingDir = leaderSR.flipX ? -1 : 1;
+        else if (cachedLeaderRb != null)
+            facingDir = cachedLeaderRb.linearVelocity.x >= 0f ? 1 : -1;
+    }
+
+    // ------------------ Jump Decision ------------------
+
+    void HandleSmartJump()
+    {
+        if (Time.time - lastJumpTime < gapJumpCooldown) return;
+
+        Vector2 frontOrigin = new Vector2(rb.position.x + facingDir * (frontRayDistance * 0.5f), rb.position.y);
+        Vector2 downOrigin = new Vector2(rb.position.x + facingDir * frontRayDistance, rb.position.y - halfHeight);
+
+        bool groundAhead = Physics2D.Raycast(downOrigin, Vector2.down, 0.3f, groundLayer);
+
+        // Condition 1: Gap ahead while moving forward
+        if (!groundAhead && Mathf.Abs(cachedLeaderRb.linearVelocity.x) > 0.1f)
+        {
+            DoJump();
+            return;
+        }
+
+        // Condition 2: Player is clearly above (platform climb)
+        if (leader.position.y - rb.position.y > 0.6f)
+        {
+            // Check if there is platform above front side
+            Vector2 upOrigin = new Vector2(rb.position.x + facingDir * frontRayDistance, rb.position.y);
+            RaycastHit2D upHit = Physics2D.Raycast(upOrigin, Vector2.up, upRayDistance, groundLayer);
+
+            if (!upHit)
+            {
+                DoJump();
+                return;
+            }
+        }
+    }
+
+    void DoJump()
+    {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-        jumpsUsed++;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        myGrounded = false;
+        lastJumpTime = Time.time;
     }
 
-    void WarpBehindLeader(int facingDir)
-    {
-        Vector2 desired = new Vector2(leader.position.x - facingDir * followDistance, leader.position.y + 1f);
-        RaycastHit2D hit = Physics2D.Raycast(desired, Vector2.down, rayDown, groundLayer);
-        float y = (hit.collider != null) ? hit.point.y + GetColliderHalfHeight() : rb.position.y;
+    // ------------------ Warp Recovery ------------------
 
-        rb.position = new Vector2(desired.x, y);
+    void SoftWarpBehindLeader()
+    {
+        isWarping = true;
+
+        Vector2 targetPos = new Vector2(
+            leader.position.x - facingDir * followDistance,
+            leader.position.y + warpYOffset
+        );
+
+        RaycastHit2D hit = Physics2D.Raycast(targetPos, Vector2.down, 4f, groundLayer);
+        if (hit)
+            targetPos.y = hit.point.y + halfHeight;
+
+        rb.position = targetPos;
         rb.linearVelocity = Vector2.zero;
-    }
 
-    float GetColliderHalfHeight()
-    {
-        if (col is CapsuleCollider2D cap) return cap.size.y * 0.5f;
-        if (col is BoxCollider2D box) return box.size.y * 0.5f;
-        if (col is CircleCollider2D cir) return cir.radius;
-        return 0.5f;
+        isWarping = false;
     }
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.cyan;
-        if (myGroundCheck != null) Gizmos.DrawWireSphere(myGroundCheck.position, groundRadius);
-        if (leaderGroundCheck != null) Gizmos.DrawWireSphere(leaderGroundCheck.position, leaderGroundRadius);
+        if (!Application.isPlaying) return;
+
+        Gizmos.color = myGrounded ? Color.green : Color.red;
+        Vector2 origin = rb.position;
+        Gizmos.DrawLine(origin, origin + Vector2.down * (halfHeight + groundCheckDistance));
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(origin, origin + Vector2.right * facingDir * frontRayDistance);
     }
 }
