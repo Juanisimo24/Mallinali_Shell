@@ -11,7 +11,7 @@ public class TurtleTaunt : MonoBehaviour
     public LayerMask enemyLayer;
 
     [Header("Defensivo durante taunt")]
-    public TurtleHealth turtleHealth;
+    public CharacterStats turtleHealth;
     public float tauntDamageMultiplier = 0.7f;   // 30% DR adicional
     public float tauntKnockbackScale = 0.5f;     // menos knockback
     public float visualPulseSeconds = 0.25f;     // tiempo de vfx inicial
@@ -56,15 +56,12 @@ public class TurtleTaunt : MonoBehaviour
 
     System.Collections.IEnumerator TemporaryDefenseBuff()
     {
-        // Activar “charging” (si quieres reaprovechar tu lógica de armadura)
-        turtleHealth.SetCharging(true);
+;
         // O puedes añadir banderas específicas; aquí usamos charging para reusar multiplicadores.
         float end = Time.time + tauntDuration;
         while (Time.time < end)
             yield return null;
-
-        turtleHealth.SetCharging(false);
-    }
+   }
 
     void OnDrawGizmosSelected()
     {

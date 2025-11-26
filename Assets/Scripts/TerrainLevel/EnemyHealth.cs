@@ -24,12 +24,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void TakeDamage(int damage, Vector2 hitPoint, Vector2 hitNormal)
     {
         currentHealth -= damage;
-        if (flashOnHit && sr != null) StartCoroutine(Flash());
+        if (flashOnHit && sr != null){
+             StartCoroutine(Flash());
+             };
 
         if (currentHealth <= 0)
         {
             Die();
         }
+
     }
 
     System.Collections.IEnumerator Flash()
@@ -46,9 +49,4 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
 
 
-}
-
-internal interface IDamageable
-{
-    void TakeDamage(int damage, Vector2 hitPoint, Vector2 hitNormal);
 }

@@ -5,33 +5,21 @@ public class PlayerController : MonoBehaviour
 {
     public event System.Action OnJump;
 
-    [Header("Movimiento")]
+    [Header("Movement")]
     public float speed = 5f;
     public float runMultiplier = 1.5f;
 
-    [Header("Salto")]
+    [Header("Jump")]
     public float jumpForce = 7f;
-    public int maxJumps = 2; // 👈 Doble salto (2 saltos permitidos)
+    public int maxJumps = 2; 
 
-    [Header("Dash (Ctrl)")]
-    public float dashSpeed = 14f;
-    public float dashDuration = 0.18f;
-    public float dashCooldown = 0.35f;
-    public int maxAirDashes = 1;
-    public bool resetDashOnGround = true;
-
-    [Header("Ground Check (BoxCast)")]
+    [Header("Ground Check")]
     public LayerMask groundLayer;
     public float groundSkinWidth = 0.06f;
     public float groundCheckDistance = 0.08f;
 
-    [Header("Combate")]
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
-
-    [Header("Gestión externa")]
-    public bool canControl = true;
+    [Header("Combat Reference")]
+    public PlayerCombat combat; // Just a reference, logic is in PlayerCombat
 
     [Header("Jump Feel")]
     public float coyoteTime = 0.12f;
@@ -42,176 +30,156 @@ public class PlayerController : MonoBehaviour
     public float apexThreshold = 0.35f;
     public float maxFallSpeed = 20f;
 
+    // --- State Management ---
+    public bool canControl = true; 
+    private bool isAbilityOverridingMovement = false; // NEW: Blocks movement input
+
     // Refs
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
     private Collider2D col;
-    private PlayerManagerDual manager;
-    private PlayerCombat combat;
+    private Animator animator;
 
-    // Estados
+    // Internal State
     private bool isGrounded;
-    private bool isDashing;
-    private int airDashesUsed;
     private int jumpsUsed;
+    private int facing = 1;
 
-    // Timers
-    private float dashTimer;
-    private float dashCooldownTimer;
-    private float coyoteCounter;
-    private float jumpBufferCounter;
-
-    // Input
+    // Input Cache
     private float moveInput;
     private bool jumpPressed;
     private bool jumpHeld;
-    private bool dashPressed;
     private bool attackPressed;
 
-    // Otros
-    private float baseGravityScale;
-    private int facing = 1;
+    // Timers
+    private float coyoteCounter;
+    private float jumpBufferCounter;
+
+    [Header("Ladder State")]
+    private bool isClimbing;
+    private float ladderClimbSpeed;
+    private float ladderSlideSpeed;
+    private float verticalInput;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        combat = GetComponent<PlayerCombat>();
-        manager = FindObjectOfType<PlayerManagerDual>();
-
+        animator = GetComponent<Animator>();
         rb.freezeRotation = true;
-        baseGravityScale = Mathf.Max(0.0001f, rb.gravityScale);
     }
 
     void Update()
     {
+        // 1. If Ability is overriding (like Dashing), skip input processing
+        if (isAbilityOverridingMovement) return;
+
         if (canControl)
         {
             moveInput = Input.GetAxisRaw("Horizontal");
             jumpPressed = Input.GetButtonDown("Jump");
             jumpHeld = Input.GetButton("Jump");
-            dashPressed = Input.GetKeyDown(KeyCode.LeftControl);
             attackPressed = Input.GetButtonDown("Fire1");
+            verticalInput = Input.GetAxisRaw("Vertical");
         }
         else
         {
             moveInput = 0f;
-            jumpPressed = jumpHeld = dashPressed = attackPressed = false;
+            jumpPressed = jumpHeld = attackPressed = false;
         }
 
-        // --- Ground check ---
-        isGrounded = CheckGrounded();
-
-        // Reset de saltos y dashes al tocar suelo
-        if (isGrounded)
+         // Check if we jump OFF the ladder
+        if (isClimbing && Input.GetButtonDown("Jump"))
         {
-            jumpsUsed = 0;
-            if (resetDashOnGround) airDashesUsed = 0;
+            SetLadderState(false, 0, 0); // Exit ladder immediately on jump
+            DoJump(); // Perform the jump
         }
 
-        // Coyote / buffer
+        // 2. Ground Check
+        isGrounded = CheckGrounded();
+        if (isGrounded) jumpsUsed = 0;
+
+        // 3. Jump Timers
         if (isGrounded) coyoteCounter = coyoteTime;
         else coyoteCounter -= Time.deltaTime;
 
         if (jumpPressed) jumpBufferCounter = jumpBufferTime;
         else jumpBufferCounter -= Time.deltaTime;
 
-        // Intentar salto (doble o normal)
-        if (jumpBufferCounter > 0f && (coyoteCounter > 0f || jumpsUsed < maxJumps - 1) && !isDashing)
+        // 4. Jump Logic
+        if (jumpBufferCounter > 0f && (coyoteCounter > 0f || jumpsUsed < maxJumps - 1))
         {
             DoJump();
             jumpBufferCounter = 0f;
         }
 
-        // Ataque
-        if (attackPressed && combat != null && manager != null)
+        // 5. Attack (Logic is inside PlayerCombat)
+        if (attackPressed && combat != null)
         {
             combat.PerformAttack();
-            manager.RegisterAttack();
-        }
-
-        // Dash
-        if (dashCooldownTimer > 0f) dashCooldownTimer -= Time.deltaTime;
-
-        if (dashPressed && !isDashing && dashCooldownTimer <= 0f)
-        {
-            bool canDashNow = isGrounded || (airDashesUsed < maxAirDashes);
-            if (canDashNow)
-            {
-                StartDash();
-                if (!isGrounded) airDashesUsed++;
-            }
-        }
-
-        if (isDashing)
-        {
-            dashTimer -= Time.deltaTime;
-            if (dashTimer <= 0f) EndDash();
         }
     }
 
     void FixedUpdate()
     {
-        // --- Movimiento horizontal ---
-        if (!isDashing)
+        // IMPORTANT: If Ability is overriding (like Dashing), DO NOT touch Velocity
+        if (isAbilityOverridingMovement) return;
+
+        if (isClimbing)
         {
-            // 👇 No correr en el aire
-            float currentSpeed = isGrounded && Input.GetKey(KeyCode.LeftShift) ? speed * runMultiplier : speed;
+            HandleLadderPhysics();
+            return; // STOP here, do not run normal gravity/movement logic
+        }
+        // --- Movement ---
+        float currentSpeed = isGrounded && Input.GetKey(KeyCode.LeftShift) ? speed * runMultiplier : speed;
+        float targetVX = moveInput * currentSpeed;
+        
+        // Soft Acceleration
+        float smoothedVX = Mathf.MoveTowards(rb.linearVelocity.x, targetVX, 20f * Time.fixedDeltaTime);
+        rb.linearVelocity = new Vector2(smoothedVX, rb.linearVelocity.y);
 
-            float targetVX = moveInput * currentSpeed;
-            float smoothedVX = Mathf.MoveTowards(rb.linearVelocity.x, targetVX, 20f * Time.fixedDeltaTime); // aceleración suave
-            rb.linearVelocity = new Vector2(smoothedVX, rb.linearVelocity.y);
-
-            // Flip
-            if (moveInput > 0.01f) facing = 1;
-            else if (moveInput < -0.01f) facing = -1;
-
+        // --- Animations & Facing ---
+        if (Mathf.Abs(moveInput) > 0.01f)
+        {
+            facing = moveInput > 0 ? 1 : -1;
+            animator.SetBool("iswalking", true);
+            
             var ls = transform.localScale;
             transform.localScale = new Vector3(facing * Mathf.Abs(ls.x), ls.y, ls.z);
         }
+        else
+        {
+            animator.SetBool("iswalking", false);
+        }
 
-        // --- Aplicar mejor gravedad (AddForce) ---
-        if (!isDashing)
-            ApplyBetterGravity();
+        // --- Gravity ---
+        ApplyBetterGravity();
 
-        // Clamp de caída
+        // Fall Clamp
         if (rb.linearVelocity.y < -maxFallSpeed)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxFallSpeed);
     }
 
-    // ----------------- ACCIONES -----------------
+    // --- NEW METHOD FOR ABILITIES ---
+    // The DashAbility will call this: SetAbilityActive(true) -> Dash -> SetAbilityActive(false)
+    public void SetAbilityOverride(bool active)
+    {
+        isAbilityOverridingMovement = active;
+        if (active)
+        {
+            animator.SetBool("iswalking", false);
+        }
+    }
+
     void DoJump()
     {
-        // Reinicia velocidad vertical antes de saltar
+        animator.SetBool("iswalking", false);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
         coyoteCounter = 0f;
-        jumpBufferCounter = 0f;
         jumpsUsed++;
-
         OnJump?.Invoke();
     }
 
-    void StartDash()
-    {
-        isDashing = true;
-        dashTimer = dashDuration;
-        dashCooldownTimer = dashCooldown;
-
-        int dashDir = facing;
-        if (Mathf.Abs(moveInput) > 0.01f) dashDir = moveInput > 0 ? 1 : -1;
-
-        rb.linearVelocity = new Vector2(dashDir * dashSpeed, 0f);
-    }
-
-    void EndDash()
-    {
-        isDashing = false;
-    }
-
-    // ----------------- UTILIDADES -----------------
     bool CheckGrounded()
     {
         Bounds b = col.bounds;
@@ -225,41 +193,65 @@ public class PlayerController : MonoBehaviour
     {
         float vy = rb.linearVelocity.y;
         bool nearApex = Mathf.Abs(vy) < apexThreshold && !isGrounded;
-        float gravity = Physics2D.gravity.y * rb.mass; // base gravity force
+        float gravity = Physics2D.gravity.y * rb.mass;
         float multiplier = 1f;
 
-        if (vy < -0.01f)
-            multiplier = fallGravityMultiplier;
-        else if (vy > 0.01f && !jumpHeld)
-            multiplier = lowJumpGravityMultiplier;
-        else if (nearApex)
-            multiplier = apexGravityMultiplier;
+        if (vy < -0.01f) multiplier = fallGravityMultiplier;
+        else if (vy > 0.01f && !jumpHeld) multiplier = lowJumpGravityMultiplier;
+        else if (nearApex) multiplier = apexGravityMultiplier;
 
-        rb.AddForce(Vector2.up * gravity * (multiplier - 1f)); // add extra gravity without touching gravityScale
+        rb.AddForce(Vector2.up * gravity * (multiplier - 1f));
+    }
+
+    void HandleLadderPhysics()
+    {
+        // 1. Horizontal Movement (Optional: allow moving slightly left/right on ladder)
+        float currentSpeed = speed * 0.5f; // Move slower horizontally on ladder
+        float targetVX = moveInput * currentSpeed;
+        
+        // 2. Vertical Movement
+        float targetVY = 0f;
+
+        if (Mathf.Abs(verticalInput) > 0.1f)
+        {
+            // Climbing Up or Down intentionally
+            targetVY = verticalInput * ladderClimbSpeed;
+            animator.SetBool("isClimbing", true); // Ensure you have this param
+            animator.SetFloat("climbSpeed", Mathf.Abs(verticalInput));
+        }
+        else
+        {
+            // "Get down slower" effect (Passive Slide)
+            targetVY = -ladderSlideSpeed; 
+            animator.SetBool("isClimbing", true); 
+            animator.SetFloat("climbSpeed", 0f); // Paused animation
+        }
+
+        // Apply
+        rb.linearVelocity = new Vector2(targetVX, targetVY);
+    }
+
+    public void SetLadderState(bool active, float speed, float slide)
+    {
+        isClimbing = active;
+        ladderClimbSpeed = speed;
+        ladderSlideSpeed = slide;
+
+        if (active)
+        {
+            rb.gravityScale = 0f; // Disable Unity gravity
+        }
+        else
+        {
+            rb.gravityScale = 1f; // Restore gravity (ApplyBetterGravity takes over)
+            //animator.SetBool("isClimbing", false);
+        }
     }
 
     void OnDrawGizmosSelected()
     {
-        if (col == null) col = GetComponent<Collider2D>();
         if (col == null) return;
-
-        Bounds b = col.bounds;
-        Vector2 size = new Vector2(b.size.x - groundSkinWidth * 2f, b.size.y);
-        Vector2 origin = b.center;
-        Vector2 down = Vector2.down * groundCheckDistance;
-
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(origin, size);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(origin + down, size);
-    }
-
-    public void SetControl(bool enabledControl)
-    {
-        canControl = enabledControl;
-        if (!enabledControl)
-        {
-            moveInput = 0f; jumpPressed = false; jumpHeld = false; dashPressed = false; attackPressed = false;
-        }
+        Gizmos.DrawWireCube(col.bounds.center, new Vector2(col.bounds.size.x - 0.12f, col.bounds.size.y));
     }
 }

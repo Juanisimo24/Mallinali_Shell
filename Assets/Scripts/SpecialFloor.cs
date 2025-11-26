@@ -70,7 +70,7 @@ public class SpecialFloor : MonoBehaviour
         var turltleCtrl = turtle.GetComponent<TortugaController>();
         var turltleRigid = turtle.GetComponent<Rigidbody2D>();
         var turltleWaterCtrl = turtle.GetComponent<UnderWaterControl>();
-        var warriorFol = warrior.GetComponent<FollowerGround2D>();
+        var warriorFol = warrior.GetComponent<CompanionAStar2D>();
         if (turltleCtrl) turltleCtrl.enabled = false;
         if (warriorFol) warriorFol.enabled = false;
         if (turltleRigid) turltleRigid.gravityScale = 0;
@@ -88,7 +88,7 @@ public class SpecialFloor : MonoBehaviour
         var turltleCtrl = turtle.GetComponent<TortugaController>();
         var turltleRigid = turtle.GetComponent<Rigidbody2D>();
         var turltleWaterCtrl = turtle.GetComponent<UnderWaterControl>();
-        var warriorFol = warrior.GetComponent<FollowerGround2D>();
+        var warriorFol = warrior.GetComponent<CompanionAStar2D>();
         if (turltleCtrl) turltleCtrl.enabled = true;
         if (warriorFol) warriorFol.enabled = true;
         if (turltleRigid) turltleRigid.gravityScale = 1;
@@ -146,4 +146,7 @@ Collider2D platformCollision = GetComponent<Collider2D>();
     {
         return underWater;
     }
+
+
+
 }
