@@ -27,7 +27,7 @@ public class TransitionNI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
- if (other.gameObject.CompareTag("Principal")||other.gameObject.CompareTag("Tortuga"))
+ if (other.gameObject.CompareTag("Player"))
         {
             player = other.gameObject;
             beInteracted();

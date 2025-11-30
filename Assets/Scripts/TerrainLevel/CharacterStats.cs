@@ -72,6 +72,7 @@ public class CharacterStats : MonoBehaviour, IDamageable
         {
             Die();
         }
+        
 
     }
 
@@ -81,15 +82,15 @@ public class CharacterStats : MonoBehaviour, IDamageable
         OnDeath?.Invoke();
         
         // If it's an enemy, destroy. If player, Manager handles logic.
-        if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (gameObject.layer != LayerMask.NameToLayer("Enemy"))
         {
-            Destroy(gameObject);
+            
+            // Disable interactions, play animation, wait for Respawn
+             gameObject.SetActive(false); 
         }
         else
         {
-            // Disable interactions, play animation, wait for Respawn
-             gameObject.SetActive(false); 
-             
+            //Destroy(gameObject);
         }
     }
 
@@ -139,6 +140,14 @@ public void RestoreEnergy(float amount)
         OnRevive?.Invoke();
         Debug.Log($"{gameObject.name} ha revivido!");
     }
+
+    public void Heal(int amount)
+{
+    currentHealth += amount;
+    currentHealth = Mathf.Min(currentHealth, maxHealth); // No pasar del máximo
+    OnHealthChanged?.Invoke(currentHealth, maxHealth);
+    // Opcional: OnHeal visual effect
+}
 
     // ==========================================
     //              STATE SETTERS
