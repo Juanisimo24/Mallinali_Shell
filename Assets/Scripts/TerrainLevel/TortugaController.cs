@@ -170,21 +170,44 @@ public class TortugaController : MonoBehaviour
     // ============================================
     //              LOGIC: SWIMMING
     // ============================================
-    void HandleSwimmingPhysics()
+   void HandleSwimmingPhysics()
     {
+        // 1. Move
         if (inputDir.sqrMagnitude > 0.1f)
         {
             Vector2 targetVel = inputDir * swimSpeed;
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVel, swimAcceleration * Time.fixedDeltaTime);
             
-            // Rotation based on movement
-            float angle = Mathf.Atan2(inputDir.y, inputDir.x) * Mathf.Rad2Deg;
-            Quaternion targetRot = Quaternion.Euler(0, 0, angle);
+            // 2. Visual Rotation Logic (The Fix)
+            
+            // A. FACE LEFT/RIGHT (Using Scale, not Rotation)
+            if (Mathf.Abs(inputDir.x) > 0.1f)
+            {
+                facing = inputDir.x > 0 ? 1 : -1;
+                UpdateScale(); // Use your existing scale method to flip X
+            }
+
+            // B. TILT UP/DOWN (Clamp rotation so it never goes upside down)
+            // We calculate angle based on Y movement, but limit it to +/- 45 degrees
+            float tiltAngle = 0f;
+            if (Mathf.Abs(inputDir.y) > 0.1f)
+            {
+                // If moving Up, tilt 30 degrees. If Down, tilt -30.
+                // We multiply by 'facing' so the tilt works correctly when facing Left or Right
+                tiltAngle = inputDir.y > 0 ? 40f * facing : -40f * facing;
+            }
+
+            // Smoothly rotate to the target tilt
+            Quaternion targetRot = Quaternion.Euler(0, 0, tiltAngle);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime);
         }
         else
         {
+            // Decelerate
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, swimAcceleration * Time.fixedDeltaTime);
+            
+            // Slowly return to 0 rotation (horizontal) when stopped
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, rotationSpeed * Time.fixedDeltaTime);
         }
     }
 

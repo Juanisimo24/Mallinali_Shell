@@ -40,14 +40,29 @@ public class EnemyRanged : EnemyAI
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
-        anim.SetTrigger("Attack");
+        if (anim != null) anim.SetTrigger("Attack");
+
         if (projectilePrefab && firePoint)
         {
             GameObject p = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Vector2 dir = (target.position - firePoint.position).normalized;
-            p.GetComponent<EnemyProjectile>().Launch(dir);
+            
+            // --- THE FIX ---
+            // We look for the Parent Component. 
+            // It doesn't matter if the prefab has PoisonProjectile or EnemyProjectile attached,
+            // both are children of ProjectileBase.
+            var projScript = p.GetComponent<ProjectileBase>();
+            
+            if (projScript != null)
+            {
+                projScript.Launch(dir);
+            }
+            else
+            {
+                Debug.LogError("The projectile prefab does not have a script inheriting from ProjectileBase!");
+            }
         }
     }
 }

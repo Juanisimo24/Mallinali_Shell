@@ -2,175 +2,159 @@ using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
 using Pathfinding;
-
 public class SpecialFloor : MonoBehaviour
 {
     [Header("Debug")]
     [SerializeField] private bool showDebug = true;
 
     [Header("Configuración")]
+    [Tooltip("Ángulo máximo (en grados) para considerar una colisión como 'desde arriba'")]
     [Range(0f, 180f)] public float topAngleThreshold = 45f;
+
+    [Tooltip("Ángulo máximo (en grados) para considerar una colisión como 'desde abajo'")]
     [Range(0f, 180f)] public float bottomAngleThreshold = 45f;
 
     public PlayerManagerDual manager;
-    public GameObject warrior;
+    public GameObject warrior;    // Guerrero azteca
     public GameObject turtle;
 
-    [Header("Inputs")]
     public KeyCode diveKey = KeyCode.S;
+    bool divePressed;
     public KeyCode upKey = KeyCode.W;
-    
-    [Header("Límites de Cámara")]
-    [SerializeField] PolygonCollider2D landBoundary; // Antes mapBoundry
-    [SerializeField] PolygonCollider2D waterBoundary; // Antes mapBoundry2
-    private CinemachineConfiner2D confiner;
+    public KeyCode upKey2 = KeyCode.Space;
+    [SerializeField] PolygonCollider2D mapBoundry;
+    [SerializeField] PolygonCollider2D mapBoundry2;
+    CinemachineConfiner2D confiner;
+    bool upPressed;
 
-    // Estado interno
-    private bool underWater = false;
-
-    void Start()
+    bool underWater=false;
+    public void Update()
     {
-        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
+        confiner = FindAnyObjectByType<CinemachineConfiner2D>();
+        divePressed = Input.GetKey(diveKey);
+        upPressed = Input.GetKey(upKey) && Input.GetKey(upKey2);
     }
 
-    // Usamos Stay para detectar el input mientras estamos parados sobre la plataforma
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 1. Validar que sea la tortuga la activa
-        if (manager.GetActive() != turtle) return;
+        // Tomamos el primer punto de contacto
+        ContactPoint2D contact = collision.contacts[0];
+        Vector2 normal = contact.normal;
 
-        // Inputs actuales
-        bool divePressed = Input.GetKey(diveKey);
-        // Para subir pedimos W y que la tortuga esté nadando (underWater)
-        bool upPressed = Input.GetKey(upKey); 
-
-        // Analizar colisión
-        foreach (ContactPoint2D contact in collision.contacts)
+        // Ángulo entre la normal del contacto y el eje vertical
+        float angle = Vector2.Angle(normal, Vector2.up);
+        if (manager.GetActive().layer == 7)
         {
-            Vector2 normal = contact.normal;
-            float angle = Vector2.Angle(normal, Vector2.up);
-
-            // --- CASO 1: ESTAMOS ARRIBA (Queremos bajar) ---
-            // El ángulo es pequeño (la normal apunta arriba), estamos pisando el suelo
-            if (angle <= topAngleThreshold && !underWater)
+            if (angle <= topAngleThreshold)
             {
-                if (divePressed)
-                {
-                    EnterWaterMode(collision.collider);
-                    break; // Evitar múltiples llamadas
-                }
-            }
-            // --- CASO 2: ESTAMOS ABAJO (Queremos subir) ---
-            // El ángulo es grande (la normal apunta abajo), estamos golpeando el techo
-            else if (angle >= 180f - bottomAngleThreshold && underWater)
-            {
+                Debug.Log($"ia pls");
                 if (upPressed)
                 {
-                    ExitWaterMode(collision.collider);
-                    break;
+                    underWater = false;
+                    OnHitFromBelow(collision, contact);
+                }
+                    
+            }
+            else if (angle >= 180f - bottomAngleThreshold)
+            {
+                Debug.Log($"si se puede");
+                if (divePressed)
+                {
+                    underWater = true;
+                    OnHitFromAbove(collision, contact);
                 }
             }
         }
+
     }
 
-    private void EnterWaterMode(Collider2D turtleCol)
+    private void OnHitFromAbove(Collision2D collision, ContactPoint2D contact)
     {
-        Debug.Log("Bajando al agua...");
-        underWater = true;
-
-        // 1. Desactivar IA y Guerrero (El guerrero se queda arriba)
-        DisableWarriorFollow();
-
-        // 2. Activar Modo Nado en el Controlador Unificado
-        var tortugaCtrl = turtle.GetComponent<TortugaController>();
-        if (tortugaCtrl) tortugaCtrl.SetSwimming(true);
-
-        // 3. Física de atravesar plataforma
-        DropThroughPlatform(turtleCol);
-
-        // 4. Cámara
-        if (confiner && waterBoundary) confiner.BoundingShape2D = waterBoundary;
-    }
-
-    private void ExitWaterMode(Collider2D turtleCol)
-    {
-        Debug.Log("Saliendo a tierra...");
-        underWater = false;
-
-        // 1. Reactivar IA del Guerrero
-        EnableWarriorFollow();
-
-        // 2. Desactivar Modo Nado (Vuelve a caminar)
-        var tortugaCtrl = turtle.GetComponent<TortugaController>();
-        if (tortugaCtrl) tortugaCtrl.SetSwimming(false);
-
-        // 3. Física de atravesar plataforma hacia arriba
-        UpThroughPlatform(turtleCol);
-
-        // 4. Cámara
-        if (confiner && landBoundary) confiner.BoundingShape2D = landBoundary;
-    }
-
-    // --- UTILIDADES ---
-
-    void DisableWarriorFollow()
-    {
-        var warriorAI = warrior.GetComponent<CompanionAStar2D>();
-        var warriorSeeker = warrior.GetComponent<Seeker>();
-        if (warriorAI) warriorAI.enabled = false;
-        if (warriorSeeker) warriorSeeker.enabled = false;
+        Collider2D turtleCollision = turtle.GetComponent<Collider2D>();
+        DropThroughPlatform(turtleCollision);
+        var turltleCtrl = turtle.GetComponent<TortugaController>();
+        var turltleRigid = turtle.GetComponent<Rigidbody2D>();
         
-        // Opcional: Detener al guerrero visualmente
-        var warriorRb = warrior.GetComponent<Rigidbody2D>();
-        if(warriorRb) warriorRb.linearVelocity = Vector2.zero;
+        var warriorFol = warrior.GetComponent<CompanionAStar2D>();
+        var warriorSeek = warrior.GetComponent<Seeker>();
+        if (warriorSeek) warriorSeek.enabled = false;
+        if (turltleCtrl) turltleCtrl.SetSwimming(true);
+        if (warriorFol) warriorFol.enabled = false;
+        if (turltleRigid) turltleRigid.gravityScale = 0;
+        confiner.BoundingShape2D = mapBoundry;
+
+        Debug.Log($"Puedes bajar");
+
     }
 
-    void EnableWarriorFollow()
+    private void OnHitFromBelow(Collision2D collision, ContactPoint2D contact)
     {
-        var warriorAI = warrior.GetComponent<CompanionAStar2D>();
-        if (warriorAI) warriorAI.enabled = true;
-        // Seeker se activa solo si es necesario, AStar suele manejarlo
-    }
 
-    void DropThroughPlatform(Collider2D turtleCollider)
-    {
-        Collider2D platformCollider = GetComponent<Collider2D>();
-        Physics2D.IgnoreCollision(turtleCollider, platformCollider, true);
-        
-        // Empujón hacia abajo para asegurar que cruce
-        turtle.transform.position += Vector3.down * 2.5f; 
-
-        StartCoroutine(RestoreCollision(turtleCollider, platformCollider, 0.5f));
-    }
-
-    void UpThroughPlatform(Collider2D turtleCollider)
-    {
-        Collider2D platformCollider = GetComponent<Collider2D>();
-        Physics2D.IgnoreCollision(turtleCollider, platformCollider, true);
-
-        // Empujón hacia arriba y rotación a 0 para caer de pie
-        turtle.transform.position += Vector3.up * 3.5f;
+        Collider2D turtleCollision = turtle.GetComponent<Collider2D>();
+        UpThroughPlatform(turtleCollision);
+        var turltleCtrl = turtle.GetComponent<TortugaController>();
+        var turltleRigid = turtle.GetComponent<Rigidbody2D>();
+        var warriorFol = warrior.GetComponent<CompanionAStar2D>();
+        if (turltleCtrl) turltleCtrl.SetSwimming(false);
+        if (warriorFol) warriorFol.enabled = true;
+        if (turltleRigid) turltleRigid.gravityScale = 1;
         turtle.transform.rotation = Quaternion.identity;
 
-        StartCoroutine(RestoreCollision(turtleCollider, platformCollider, 0.5f));
-    }
+         confiner.BoundingShape2D = mapBoundry2;
+        Debug.Log($"Puedes salir");
 
-    private IEnumerator RestoreCollision(Collider2D turtleCol, Collider2D platformCol, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Physics2D.IgnoreCollision(turtleCol, platformCol, false);
+        // Ejemplo: daño, rebote o bloqueo espiritual
+        // collision.gameObject.GetComponent<PlayerHealth>()?.TakeDamage(10);
     }
 
     private void OnDrawGizmos()
     {
         if (!showDebug) return;
         Gizmos.color = Color.yellow;
-        if (GetComponent<Collider2D>())
-            Gizmos.DrawWireCube(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size);
+        Gizmos.DrawWireCube(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size);
+    }
+
+void DropThroughPlatform(Collider2D turtleCollider)
+    {
+        Rigidbody2D turtleRigidbody = turtle.GetComponent<Rigidbody2D>();
+Collider2D platformCollision = GetComponent<Collider2D>();
+    // 1. Ignorar colisión temporal
+    Physics2D.IgnoreCollision(turtleCollider, platformCollision, true);
+
+    // 2. Mover tortuga un poco hacia abajo
+    turtleRigidbody.position += Vector2.down * 3f;
+
+
+    // 3. Rehabilitar la colisión después de un momento
+    StartCoroutine(RestoreCollision(turtleCollider, 0.3f));
+}
+
+    void UpThroughPlatform(Collider2D turtleCollider)
+    {
+        Rigidbody2D turtleRigidbody = turtle.GetComponent<Rigidbody2D>();
+        Collider2D platformCollision = GetComponent<Collider2D>();
+        // 1. Ignorar colisión temporal
+        Physics2D.IgnoreCollision(turtleCollider, platformCollision, true);
+
+        // 2. Mover tortuga un poco hacia arriba
+        turtleRigidbody.position += Vector2.up * 7f;
+       
+        // 3. Rehabilitar la colisión después de un momento
+        StartCoroutine(RestoreCollision(turtleCollider, 0.3f));
+    }
+
+    private IEnumerator RestoreCollision(Collider2D turtleCollider, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Collider2D platformCollision = GetComponent<Collider2D>();
+        Physics2D.IgnoreCollision(platformCollision, turtleCollider, false);
     }
 
     public bool getUnderWater()
     {
         return underWater;
     }
+
+
+
 }

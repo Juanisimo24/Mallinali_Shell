@@ -1,24 +1,24 @@
 using UnityEngine;
 
-public class EnemyProjectile : MonoBehaviour
+public class EnemyProjectile : ProjectileBase
 {
-    public float speed = 10f;
-    public int damage = 10;
-
-    void Start() => Destroy(gameObject, 3f); // Auto destroy
-    
-    public void Launch(Vector2 dir)
+    protected override void OnTriggerEnter2D(Collider2D hit)
     {
-        GetComponent<Rigidbody2D>().linearVelocity = dir * speed;
-    }
+        // 1. Ignore other enemies
+        if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy")) return;
 
-    void OnTriggerEnter2D(Collider2D hit)
-    {
+        // 2. Hit Player
         if (hit.CompareTag("Player"))
         {
-            hit.GetComponent<IDamageable>()?.TakeDamage(damage, transform.position, Vector2.zero);
+            var stats = hit.GetComponent<CharacterStats>();
+            if (stats != null)
+            {
+                // Use variable from Base Class
+                stats.TakeDamage(impactDamage, transform.position, rb.linearVelocity.normalized);
+            }
             Destroy(gameObject);
         }
+        // 3. Hit Ground
         else if (hit.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
