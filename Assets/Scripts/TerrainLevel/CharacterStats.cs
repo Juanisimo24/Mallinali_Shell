@@ -21,6 +21,9 @@ public class CharacterStats : MonoBehaviour, IDamageable
     [Header("References")]
     private Rigidbody2D rb;
 
+public Color poisonColor = Color.cyan;
+private Color originalColor;
+private SpriteRenderer sr;
     
     public event Action OnRevive;
     public event Action<int, int> OnHealthChanged; // Current, Max
@@ -72,6 +75,7 @@ public class CharacterStats : MonoBehaviour, IDamageable
         {
             Die();
         }
+        
 
     }
 
@@ -81,15 +85,15 @@ public class CharacterStats : MonoBehaviour, IDamageable
         OnDeath?.Invoke();
         
         // If it's an enemy, destroy. If player, Manager handles logic.
-        if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (gameObject.layer != LayerMask.NameToLayer("Enemy"))
         {
-            Destroy(gameObject);
+            
+            // Disable interactions, play animation, wait for Respawn
+             gameObject.SetActive(false); 
         }
         else
         {
-            // Disable interactions, play animation, wait for Respawn
-             gameObject.SetActive(false); 
-             
+            //Destroy(gameObject);
         }
     }
 
@@ -139,6 +143,54 @@ public void RestoreEnergy(float amount)
         OnRevive?.Invoke();
         Debug.Log($"{gameObject.name} ha revivido!");
     }
+
+    public void Heal(int amount)
+{
+    currentHealth += amount;
+    currentHealth = Mathf.Min(currentHealth, maxHealth); // No pasar del máximo
+    OnHealthChanged?.Invoke(currentHealth, maxHealth);
+    // Opcional: OnHeal visual effect
+}
+
+public void ApplyPoison(int damagePerTick, int ticks, float timeBetweenTicks)
+{
+    StartCoroutine(PoisonRoutine(damagePerTick, ticks, timeBetweenTicks));
+}
+
+private System.Collections.IEnumerator PoisonRoutine(int damage, int ticks, float interval)
+{
+    // 1. Visual Feedback
+   
+    Debug.Log($"{gameObject.name} is Poisoned!");
+
+    // 2. Damage Loop
+    for (int i = 0; i < ticks; i++)
+    {
+         if (sr) sr.color = poisonColor;
+        // Deal direct damage (bypassing normal Hit logic like knockback)
+        currentHealth -= damage;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+        
+        // Flash or sound effect could go here
+        
+        if (currentHealth <= 0)
+        {
+            // Die logic
+            // Call your existing Die() method here if private, or replicate logic
+             Die(); 
+            // Since Die() is private in your previous scripts, 
+            // ensure currentHealth check in TakeDamage or Update catches this, 
+            // OR make Die() public/protected.
+            if(currentHealth <= 0) { /* trigger death */ } 
+        }
+
+        yield return new WaitForSeconds(interval);
+    }
+
+    // 3. Restore Visuals
+    if (sr) sr.color = originalColor;
+    Debug.Log($"{gameObject.name} Poison wore off.");
+}
 
     // ==========================================
     //              STATE SETTERS

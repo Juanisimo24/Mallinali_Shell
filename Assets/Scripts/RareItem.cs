@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class RareItem : MonoBehaviour
 {
-    [Header("Refs")]
-    [SerializeField] public TurtleTaunt turtleTaunt;         // Asigna la referencia (o se buscará en escena)
+    [Header("Refs")]      // Asigna la referencia (o se buscará en escena)
     [SerializeField] private Collider2D triggerCollider;      // Deja vacío si usarás el propio collider
     [SerializeField] private AudioClip pickupSFX;
     [SerializeField] private GameObject pickupVFX;
@@ -40,18 +39,7 @@ public class RareItem : MonoBehaviour
     {
         _consumed = true;
 
-        if (turtleTaunt == null)
-        {
-            turtleTaunt = FindObjectOfType<TurtleTaunt>();
-        }
-
-        if (turtleTaunt != null)
-        {
-            turtleTaunt.UnlockTaunt();
-            // Persistencia opcional
-            PlayerPrefs.SetInt("Ability_Taunt", 1);
-            PlayerPrefs.Save();
-        }
+        
 
         if (pickupSFX) AudioSource.PlayClipAtPoint(pickupSFX, transform.position);
         if (pickupVFX) Instantiate(pickupVFX, transform.position, Quaternion.identity);

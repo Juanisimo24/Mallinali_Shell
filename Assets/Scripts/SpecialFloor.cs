@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
-
+using Unity.Cinemachine;
+using Pathfinding;
 public class SpecialFloor : MonoBehaviour
 {
     [Header("Debug")]
@@ -21,11 +22,15 @@ public class SpecialFloor : MonoBehaviour
     bool divePressed;
     public KeyCode upKey = KeyCode.W;
     public KeyCode upKey2 = KeyCode.Space;
+    [SerializeField] PolygonCollider2D mapBoundry;
+    [SerializeField] PolygonCollider2D mapBoundry2;
+    CinemachineConfiner2D confiner;
     bool upPressed;
 
     bool underWater=false;
     public void Update()
     {
+        confiner = FindAnyObjectByType<CinemachineConfiner2D>();
         divePressed = Input.GetKey(diveKey);
         upPressed = Input.GetKey(upKey) && Input.GetKey(upKey2);
     }
@@ -38,7 +43,7 @@ public class SpecialFloor : MonoBehaviour
 
         // Ángulo entre la normal del contacto y el eje vertical
         float angle = Vector2.Angle(normal, Vector2.up);
-        if (manager.GetActive().tag == "Tortuga")
+        if (manager.GetActive().layer == 7)
         {
             if (angle <= topAngleThreshold)
             {
@@ -69,12 +74,14 @@ public class SpecialFloor : MonoBehaviour
         DropThroughPlatform(turtleCollision);
         var turltleCtrl = turtle.GetComponent<TortugaController>();
         var turltleRigid = turtle.GetComponent<Rigidbody2D>();
-        var turltleWaterCtrl = turtle.GetComponent<UnderWaterControl>();
+        
         var warriorFol = warrior.GetComponent<CompanionAStar2D>();
-        if (turltleCtrl) turltleCtrl.enabled = false;
+        var warriorSeek = warrior.GetComponent<Seeker>();
+        if (warriorSeek) warriorSeek.enabled = false;
+        if (turltleCtrl) turltleCtrl.SetSwimming(true);
         if (warriorFol) warriorFol.enabled = false;
         if (turltleRigid) turltleRigid.gravityScale = 0;
-        if (turltleWaterCtrl) turltleWaterCtrl.enabled = true;
+        confiner.BoundingShape2D = mapBoundry;
 
         Debug.Log($"Puedes bajar");
 
@@ -87,13 +94,13 @@ public class SpecialFloor : MonoBehaviour
         UpThroughPlatform(turtleCollision);
         var turltleCtrl = turtle.GetComponent<TortugaController>();
         var turltleRigid = turtle.GetComponent<Rigidbody2D>();
-        var turltleWaterCtrl = turtle.GetComponent<UnderWaterControl>();
         var warriorFol = warrior.GetComponent<CompanionAStar2D>();
-        if (turltleCtrl) turltleCtrl.enabled = true;
+        if (turltleCtrl) turltleCtrl.SetSwimming(false);
         if (warriorFol) warriorFol.enabled = true;
         if (turltleRigid) turltleRigid.gravityScale = 1;
-        if (turltleWaterCtrl) turltleWaterCtrl.enabled = false;
         turtle.transform.rotation = Quaternion.identity;
+
+         confiner.BoundingShape2D = mapBoundry2;
         Debug.Log($"Puedes salir");
 
         // Ejemplo: daño, rebote o bloqueo espiritual
@@ -117,6 +124,7 @@ Collider2D platformCollision = GetComponent<Collider2D>();
     // 2. Mover tortuga un poco hacia abajo
     turtleRigidbody.position += Vector2.down * 3f;
 
+
     // 3. Rehabilitar la colisión después de un momento
     StartCoroutine(RestoreCollision(turtleCollider, 0.3f));
 }
@@ -130,7 +138,7 @@ Collider2D platformCollision = GetComponent<Collider2D>();
 
         // 2. Mover tortuga un poco hacia arriba
         turtleRigidbody.position += Vector2.up * 7f;
-
+       
         // 3. Rehabilitar la colisión después de un momento
         StartCoroutine(RestoreCollision(turtleCollider, 0.3f));
     }

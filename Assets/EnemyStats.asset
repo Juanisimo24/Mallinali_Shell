@@ -15,7 +15,7 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   damage: 10
-  attackRange: 1.5
+  attackRange: 0.5
   attackCooldown: 1.2
   sightRange: 6
   sightAngle: 75
