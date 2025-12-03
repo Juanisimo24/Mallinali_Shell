@@ -1,5 +1,7 @@
 using System.Collections;
+using Pathfinding;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +14,7 @@ public class NPC_Dialogue : MonoBehaviour
     public Image portraitImage;
 
     public GameObject turtle;  
-    private GameObject player;  
+    private PlayerController control;  
     public GameObject manager;  
 
 private int dialogueIndex;
@@ -34,8 +36,8 @@ private bool isTyping,isDialogueActive;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var control = other.GetComponent<PlayerController>();
-        control.enabled=false;
+        control = other.GetComponent<PlayerController>();
+        control.canControl = false;
         isDialogueActive=true;
         StartDialogue();
     }
@@ -97,12 +99,12 @@ private bool isTyping,isDialogueActive;
 
     public void EndDialogue()
     {
-        //var control = player.GetComponent<PlayerController>();
-        //control.enabled=true;
+        control.canControl = true;
         StopAllCoroutines();
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
+        
         result();
         Destroy(gameObject);
     }
@@ -110,10 +112,13 @@ private bool isTyping,isDialogueActive;
     public void result()
     {
         //var manage = manager.GetComponent<PlayerManagerDual>();
-        var turtleFollow = turtle.GetComponent<FollowerGround2D>();
-        var turtleHealth = turtle.GetComponent<TurtleHealth>();
+        var turtleFollow = turtle.GetComponent<Seeker>();
+        var turtleGroundFollow = turtle.GetComponent<CompanionAStar2D>();
+        //var turtleFollow = turtle.GetComponent<SmartPlatformFollower2D>();
+        var turtleHealth = turtle.GetComponent<CharacterStats>();
         manager.SetActive(true);
         turtleFollow.enabled = true;
+        turtleGroundFollow.enabled = true;
         turtleHealth.enabled = true;
 
     }
