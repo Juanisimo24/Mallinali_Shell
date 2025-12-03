@@ -7,6 +7,7 @@ public class AbilityHolder : MonoBehaviour
     public KeyCode activationKey = KeyCode.LeftControl; // Default Dash key
 
     private float cooldownTimer;
+    private Animator anim;
     private CharacterStats stats;
     
     // Auto-detect controllers
@@ -16,6 +17,7 @@ public class AbilityHolder : MonoBehaviour
     void Awake()
     {
         stats = GetComponent<CharacterStats>();
+        anim = GetComponent<Animator>();
         warriorCtrl = GetComponent<PlayerController>();
         turtleCtrl = GetComponent<TortugaController>();
     }
@@ -44,15 +46,15 @@ public class AbilityHolder : MonoBehaviour
             // 3. Activate Ability
             // We expect the ability to return 'true' if it started
             // Ideally, we pass a callback to unlock movement when done
-            bool started = ability.Activate(gameObject, stats);
-
+            bool started = ability.Activate(gameObject, stats, anim);
             if (started)
             {
                 cooldownTimer = ability.cooldownTime;
                 // We need a way to know when the ability ENDS to unlock movement.
                 // The cleanest way in this simple system is to let the Ability Coroutine unlock it.
                 // But since ScriptableObjects can't easily reference the specific instance logic:
-                
+                float duration = 0.5f; 
+                if(ability is DashAbility dashAb) duration = dashAb.dashDuration;
                 // Hack/Fix: We start a coroutine here to wait for duration
                 // Assuming Ability has a duration public field (we added it in previous step)
                 StartCoroutine(UnlockMovementAfterDelay(ability is DashAbility ? ((DashAbility)ability).dashDuration : 0.5f));

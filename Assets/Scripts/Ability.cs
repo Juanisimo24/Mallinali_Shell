@@ -6,8 +6,8 @@ public abstract class Ability : ScriptableObject
     public string abilityName;
     public float energyCost = 10f;
     public float cooldownTime = 1f;
-
+    public string animationTriggerName = "Dash"; 
     // We pass the GameObject (parent) so the ability knows WHO is using it
     // We return 'true' if the ability successfully activated
-    public abstract bool Activate(GameObject parent, CharacterStats stats);
+    public abstract bool Activate(GameObject parent, CharacterStats stats, Animator anim);
 }

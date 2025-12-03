@@ -4,6 +4,7 @@ using Pathfinding;
 /// <summary>
 /// Grounded A* follower for 2D platformers.
 /// Walks using physics and jumps intelligently between platforms.
+/// Includes "Rubber Band" logic to prevent getting left behind.
 /// </summary>
 [RequireComponent(typeof(Seeker), typeof(Rigidbody2D))]
 public class CompanionAStar2D : MonoBehaviour
@@ -20,6 +21,10 @@ public class CompanionAStar2D : MonoBehaviour
     public float jumpForce = 8f;
     public float gravity = 1.5f;
 
+    [Header("Safety / Rubber Band")] // <--- NEW SECTION
+    [Tooltip("If the distance is greater than this, the companion teleports to the player.")]
+    public float maxDistanceToTarget = 15f; 
+
     [Header("Platform logic")]
     public float groundCheckDistance = 0.15f;
     public float jumpHeightThreshold = 0.6f;
@@ -34,10 +39,8 @@ public class CompanionAStar2D : MonoBehaviour
     private Collider2D col;
     private int currentWaypoint;
     private bool isGrounded;
-    private bool jumpRequested;
     private float halfHeight;
     private float lastJumpTime;
-    private float lastPathTime;
 
     void Awake()
     {
@@ -45,7 +48,6 @@ public class CompanionAStar2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         rb.freezeRotation = true;
-        
 
         // Cache collider height
         if (col is BoxCollider2D box) halfHeight = box.size.y * 0.5f;
@@ -53,10 +55,12 @@ public class CompanionAStar2D : MonoBehaviour
         else if (col is CircleCollider2D cir) halfHeight = cir.radius;
         else halfHeight = 0.5f;
     }
+
     void Start()
     {
         rb.gravityScale = gravity;
     }
+
     void OnEnable()
     {
         if (target != null)
@@ -87,6 +91,10 @@ public class CompanionAStar2D : MonoBehaviour
     void FixedUpdate()
     {
         if (target == null) return;
+
+        // --- NEW SAFETY CHECK ---
+        // If we are too far, teleport immediately and skip the rest of the physics
+        if (CheckDistanceAndTeleport()) return; 
 
         UpdateGrounded();
 
@@ -136,6 +144,28 @@ public class CompanionAStar2D : MonoBehaviour
     }
 
     // ----------------------------------------------------------
+    
+    // Returns TRUE if we teleported (so we can skip normal movement frame)
+    bool CheckDistanceAndTeleport()
+    {
+        float dist = Vector2.Distance(rb.position, target.position);
+        
+        if (dist > maxDistanceToTarget)
+        {
+            // Teleport to target position
+            rb.position = target.position;
+            
+            // Reset Velocity (stop them flying)
+            rb.linearVelocity = Vector2.zero;
+            
+            // Clear path so they don't get confused trying to walk back
+            path = null;
+            
+            return true; 
+        }
+        return false;
+    }
+
     void UpdateGrounded()
     {
         Vector2 origin = new Vector2(rb.position.x, rb.position.y - halfHeight);
@@ -175,6 +205,11 @@ public class CompanionAStar2D : MonoBehaviour
         if (!Application.isPlaying) return;
         Gizmos.color = isGrounded ? Color.green : Color.red;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (halfHeight + groundCheckDistance));
+        
+        // Draw the Safety Range
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, maxDistanceToTarget);
+
         if (path == null) return;
         Gizmos.color = Color.cyan;
         for (int i = 0; i < path.vectorPath.Count - 1; i++)

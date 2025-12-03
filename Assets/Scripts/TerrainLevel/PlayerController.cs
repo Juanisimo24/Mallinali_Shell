@@ -138,18 +138,20 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(smoothedVX, rb.linearVelocity.y);
 
         // --- Animations & Facing ---
-        if (Mathf.Abs(moveInput) > 0.01f)
-        {
-            facing = moveInput > 0 ? 1 : -1;
-            animator.SetBool("iswalking", true);
-            
-            var ls = transform.localScale;
-            transform.localScale = new Vector3(facing * Mathf.Abs(ls.x), ls.y, ls.z);
-        }
-        else
-        {
-            animator.SetBool("iswalking", false);
-        }
+         float currentSpeedParam = Mathf.Abs(moveInput);
+    
+    // Actualizamos el Animator con el float
+    // "Speed" debe coincidir con el nombre de tu parámetro en Unity
+    animator.SetFloat("Speed", currentSpeedParam);
+
+    // Lógica de Giro (Flip)
+    if (currentSpeedParam > 0.01f)
+    {
+        facing = moveInput > 0 ? 1 : -1;
+        
+        var ls = transform.localScale;
+        transform.localScale = new Vector3(facing * Mathf.Abs(ls.x), ls.y, ls.z);
+    }
 
         // --- Gravity ---
         ApplyBetterGravity();
@@ -166,13 +168,14 @@ public class PlayerController : MonoBehaviour
         isAbilityOverridingMovement = active;
         if (active)
         {
-            animator.SetBool("iswalking", false);
+            // Forzamos la velocidad a 0 para que el Animator vaya a Idle
+            // y no intente reproducir la animación de caminar encima del Dash
+            animator.SetFloat("Speed", 0f);
         }
     }
 
     void DoJump()
     {
-        animator.SetBool("iswalking", false);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         coyoteCounter = 0f;

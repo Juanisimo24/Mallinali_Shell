@@ -4,72 +4,135 @@ using Pathfinding;
 
 public class PlayerManagerDual : MonoBehaviour
 {
-    // --- Singleton Instance (Easy access) ---
     public static PlayerManagerDual Instance;
 
-    [Header("Configuration")]
-    public CinemachineCamera camera; // Updated for Unity 6
-
+    [Header("Referencias Globales")]
+    public CinemachineCamera camera; 
     public GameObject warrior;
-    public GameObject turtle;
-private bool isWarriorAlive = true;
+    public GameObject turtle; // ARRASTRA LA TORTUGA AQUÍ SIEMPRE
+    public HUDController hudController;
+    public SpecialFloor floorsito;
+
+    [Header("Estado de Progreso")]
+    [Tooltip("Marca esto si quieres empezar ya con la tortuga (para pruebas). En el juego real, déjalo desmarcado.")]
+    public bool startWithTurtleUnlocked = false; 
+    private bool isTurtleUnlocked = false; 
+
+    // Estados de Vida
+    private bool isWarriorAlive = true;
     private bool isTurtleAlive = true;
 
-    public SpecialFloor floorsito;
+    [Header("Configuración")]
     public KeyCode switchKey = KeyCode.Tab;
-
-    [Header("Combo State")]
     public int hitsRequired = 3;
     private int currentComboCount = 0;
 
-    public HUDController hudController;
-
-    // State Tracking
+    // Estado Interno
     private GameObject active;
     private GameObject follower;
     private bool underWater;
+    
+    // Stats Eventos
     private CharacterStats currentActiveStats; 
     private CharacterStats currentFollowerStats; 
 
-    
-
     void Awake()
     {
-        // Setup Singleton
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
     void Start()
     {
-        if (hudController == null) 
-            hudController = FindFirstObjectByType<HUDController>();
+        if (hudController == null) hudController = FindFirstObjectByType<HUDController>();
 
-        var wStats = warrior.GetComponent<CharacterStats>();
-        var tStats = turtle.GetComponent<CharacterStats>();
-        if (wStats) wStats.OnDeath += () => HandlePlayerDeath(warrior);
-        if (tStats) tStats.OnDeath += () => HandlePlayerDeath(turtle);
+        // Suscribir eventos de muerte
+        if (warrior) warrior.GetComponent<CharacterStats>().OnDeath += () => HandlePlayerDeath(warrior);
+        if (turtle) turtle.GetComponent<CharacterStats>().OnDeath += () => HandlePlayerDeath(turtle);
 
-        // Start Game
+        // CONFIGURACIÓN INICIAL
+        isTurtleUnlocked = startWithTurtleUnlocked;
+
+        if (!isTurtleUnlocked)
+        {
+            // MODO SOLO (Zona 1)
+            // Aseguramos que la tortuga no se mueva ni haga nada
+            DisableTurtleLogic();
+            
+            // Ocultamos la parte del HUD del compañero (Opcional, si tu HUD lo soporta)
+             if(hudController) hudController.SetCompanionVisible(false); // Necesitas añadir esto al HUD si quieres
+        }
+        else
+        {
+            // Si empezamos desbloqueados (Debug o Load Game)
+             if(hudController) hudController.SetCompanionVisible(true);
+        }
+
+        // Arrancar siempre con el Guerrero
         SetActive(warrior); 
     }
 
     void Update()
     {
         if (floorsito != null) underWater = floorsito.getUnderWater();
-        if (Input.GetKeyDown(switchKey)) AttemptSwitch();
+        
+        // SOLO CAMBIAMOS SI LA TORTUGA ESTÁ DESBLOQUEADA
+        if (isTurtleUnlocked && Input.GetKeyDown(switchKey)) 
+        {
+            AttemptSwitch();
+        }
     }
 
-    // --- LOGIC FOR COMBO ---
+    // --- MÉTODO PÚBLICO PARA DESBLOQUEAR A LA TORTUGA (Llamar en Zona 2) ---
+    public void UnlockTurtle()
+    {
+        if (isTurtleUnlocked) return; // Ya estaba desbloqueada
+
+        Debug.Log("¡TORTUGA DESBLOQUEADA! Modo Dual Activado.");
+        isTurtleUnlocked = true;
+
+        // 1. Reactivar la tortuga (si estaba desactivada)
+        turtle.SetActive(true);
+
+        // 2. Hacerla follower inmediatamente
+        follower = turtle;
+
+        // 3. Activar su IA para que empiece a seguirte
+        ToggleAI(follower, true, active.transform);
+
+        // 4. Actualizar HUD para mostrar la cara y vida de la tortuga
+        if(hudController) 
+        {
+            hudController.SetCompanionVisible(true);
+            // Forzamos actualización visual
+            SetActive(active); 
+        }
+    }
+
+    // Ayuda para apagar la tortuga al inicio
+    void DisableTurtleLogic()
+    {
+        if (turtle == null) return;
+        
+        // Desactivar controles e IA
+        ToggleCharacterControl(turtle, false);
+        ToggleAI(turtle, false);
+        
+        // Opcional: Si la tortuga está "esperando" en la Zona 2, no la desactives (SetActive false).
+        // Si la tortuga "aparece mágicamente", entonces sí:
+        // turtle.SetActive(false); 
+    }
+
+    // --- LOGICA DE COMBO (Solo si está desbloqueada) ---
     public void RegisterHit()
     {
-        currentComboCount++;
-        Debug.Log($"Combo: {currentComboCount}/{hitsRequired}");
+        if (!isTurtleUnlocked) return; // No hay combo en Zona 1
 
+        currentComboCount++;
         if (currentComboCount >= hitsRequired)
         {
             TriggerFollowerAttack();
-            currentComboCount = 0; // Reset
+            currentComboCount = 0; 
         }
     }
 
@@ -118,43 +181,65 @@ private bool isWarriorAlive = true;
      // MANEJO DE MUERTE
     void HandlePlayerDeath(GameObject deadCharacter)
     {
-        if (deadCharacter == warrior)
+        // 1. Update Internal State
+        if (deadCharacter == warrior) isWarriorAlive = false;
+        else isTurtleAlive = false;
+
+        // 2. Update HUD Visuals (Gray out the face)
+        bool isWarriorActive = (active == warrior);
+        if (hudController) hudController.SetCharacterDead(deadCharacter == warrior, isWarriorActive);
+
+        // -----------------------------------------------------------------
+        //                DECISION LOGIC: GAME OVER vs SWITCH
+        // -----------------------------------------------------------------
+
+        // CASE A: We are in Zone 1 (Solo Mode)
+        if (!isTurtleUnlocked)
         {
-            isWarriorAlive = false;
-            if (hudController) hudController.SetCharacterDead(true,false); // true = guerrero (ejemplo)
-        }
-        else
-        {
-            isTurtleAlive = false;
-            if (hudController) hudController.SetCharacterDead(false,false); // false = tortuga
+            // If the only character we have dies -> Game Over
+            Debug.Log("Solo Mode Death.");
+            GameOver();
+            return;
         }
 
-        // CASO 1: Murió el personaje que estamos controlando (Activo)
+        // CASE B: The ACTIVE character died (The one the camera is following)
         if (active == deadCharacter)
         {
-            // Verificamos si el OTRO sigue vivo para cambiar forzosamente
+            // We need to check if the PARTNER is alive to switch the camera to them
+            GameObject survivor = null;
+
             if (deadCharacter == warrior && isTurtleAlive)
             {
-                Debug.Log("Guerrero murió. Cambiando a Tortuga...");
-                Switch(); // Forzamos el cambio
+                survivor = turtle;
             }
             else if (deadCharacter == turtle && isWarriorAlive)
             {
-                Debug.Log("Tortuga murió. Cambiando a Guerrero...");
-                Switch(); // Forzamos el cambio
+                survivor = warrior;
+            }
+
+            if (survivor != null)
+            {
+                // --- SWITCH CAMERA AND CONTROL ---
+                Debug.Log($"Active character died! Switching control to {survivor.name}");
+                
+                // This function already sets camera.Follow/LookAt to the new target
+                SwitchTo(survivor); 
             }
             else
             {
-                // CASO CRÍTICO: Ambos están muertos
+                // --- EVERYONE IS DEAD ---
+                Debug.Log("Both characters are dead.");
                 GameOver();
             }
         }
-        // CASO 2: Murió el seguidor (follower)
+        // CASE C: The FOLLOWER died (The one behind you)
         else 
         {
-            // Simplemente desactivamos su IA o visuales (CharacterStats ya hizo SetActive(false))
-            // Aquí podrías mostrar un mensaje de "Compañero abatido"
-            Debug.Log("Tu compañero ha caído.");
+            // The camera is already on the Survivor (Active), so we don't move it.
+            // We just update the state (which we did in step 1 & 2).
+            Debug.Log("Your companion has fallen!");
+            
+            // Optional: You could play a specific sound or UI flash here
         }
     }
 
@@ -195,62 +280,93 @@ private bool isWarriorAlive = true;
         // Mostrar pantalla de Game Over
     }
 
-    void SetActive(GameObject newActive)
+void SetActive(GameObject newActive)
     {
-           // 1. Limpieza de eventos anteriores (Vital para evitar errores)
         UnsubscribeEvents();
 
-        // 2. Asignación de Roles
         active = newActive;
-        if (active == warrior) follower = turtle;
-        else follower = warrior;
+        
+        // --- LOGIC FOR DUAL MODE VS SOLO MODE ---
+        if (isTurtleAlive)
+        {
+            if (active == warrior) follower = turtle;
+            else follower = warrior;
 
-        // 3. Control y AI
+            // --- TAG SWITCHING (THE MAGIC) ---
+            // The Active character becomes "Player" (Targetable)
+            active.tag = "Player";
+            
+            // The Follower becomes "Follower" (Ignored by Enemies)
+            if (follower != null) 
+            {
+                follower.tag = "Follower";
+                
+                // Optional: Make follower ignored by physics layer to prevent blocking the player?
+                // active.layer = LayerMask.NameToLayer("Player");
+                // follower.layer = LayerMask.NameToLayer("Follower"); // If you have a Follower layer
+            }
+        }
+        else
+        {
+            follower = null; 
+            // In Solo mode, ensure active is Player
+            active.tag = "Player";
+        }
+        // ----------------------------------------
+
+        // CONTROL AND AI
         ConfigureControlsAndAI();
 
-        // 4. Configuración del HUD y Eventos
+        // HUD UPDATES
         if (hudController != null)
         {
             bool isWarriorActive = (active == warrior);
-            
-            // A. Cambiar las caras y colores
             hudController.UpdateMode(isWarriorActive);
             
-            // B. Verificar estado de muerte visual
             if (!isWarriorAlive) hudController.SetCharacterDead(true, isWarriorActive);
-            if (!isTurtleAlive) hudController.SetCharacterDead(false, isWarriorActive);
+            if (isTurtleAlive && !isTurtleAlive) hudController.SetCharacterDead(false, isWarriorActive);
 
-            // C. Conectar las barras de vida/energía
             ConnectStatsToHUD();
         }
     }
 
- void ConnectStatsToHUD()
+    void ConfigureControlsAndAI()
     {
-        // --- JUGADOR ACTIVO ---
+        ToggleCharacterControl(active, true);
+        ToggleAI(active, false);
+
+        // Solo activar IA del follower si existe y está desbloqueado
+        if (follower != null && isTurtleUnlocked)
+        {
+            ToggleCharacterControl(follower, false);
+            if (!underWater) ToggleAI(follower, true, active.transform);
+            else ToggleAI(follower, false);
+                camera.Follow = active.transform;
+                camera.LookAt = active.transform;
+        }
+    }
+
+void ConnectStatsToHUD()
+    {
         currentActiveStats = active.GetComponent<CharacterStats>();
         if (currentActiveStats != null)
         {
-            // Actualizar ya mismo
             hudController.UpdateActiveHealth(currentActiveStats.GetCurrentHealthPct());
             hudController.UpdateActiveEnergy(currentActiveStats.GetCurrentEnergyPct());
-
-            // Suscribir eventos
             currentActiveStats.OnHealthChanged += OnActiveHealthChanged;
             currentActiveStats.OnEnergyChanged += OnActiveEnergyChanged;
         }
 
-        // --- COMPAÑERO ---
-        currentFollowerStats = follower.GetComponent<CharacterStats>();
-        if (currentFollowerStats != null)
+        if (follower != null)
         {
-            // Actualizar ya mismo
-            hudController.UpdateCompanionHealth(currentFollowerStats.GetCurrentHealthPct());
-            hudController.UpdateCompanionEnergy(currentFollowerStats.GetCurrentEnergyPct());
-
-            // Suscribir eventos
-            currentFollowerStats.OnHealthChanged += OnFollowerHealthChanged;
-            currentFollowerStats.OnEnergyChanged += OnFollowerEnergyChanged;
+            currentFollowerStats = follower.GetComponent<CharacterStats>();
+            if (currentFollowerStats != null)
+            {
+                hudController.UpdateCompanionHealth(currentFollowerStats.GetCurrentHealthPct());
+                hudController.UpdateCompanionEnergy(currentFollowerStats.GetCurrentEnergyPct());
+                currentFollowerStats.OnHealthChanged += OnFollowerHealthChanged;
+                currentFollowerStats.OnEnergyChanged += OnFollowerEnergyChanged;
+            }
         }
     }
 
@@ -280,35 +396,22 @@ private bool isWarriorAlive = true;
     // ---------------------------------------------------------
     //                 LÓGICA DE JUEGO
     // ---------------------------------------------------------
-    void ConfigureControlsAndAI()
-    {
-        // Activar control del jugador
-        ToggleCharacterControl(active, true);
-        ToggleAI(active, false);
-
-        // Activar IA del compañero
-        ToggleCharacterControl(follower, false);
-        if (!underWater) ToggleAI(follower, true, active.transform);
-        else ToggleAI(follower, false);
-
-        // Cámara
-        camera.Follow = active.transform;
-        camera.LookAt = active.transform;
-    }
+   
 
     void AttemptSwitch()
     {
+        if (!isTurtleUnlocked) return; // Bloqueo extra
+
         if (active == warrior)
         {
             if (isTurtleAlive) SwitchTo(turtle);
-            else Debug.Log("¡La Tortuga está abatida!");
         }
         else
         {
             if (isWarriorAlive) SwitchTo(warrior);
-            else Debug.Log("¡El Guerrero está abatido!");
         }
     }
+
         void SwitchTo(GameObject target)
     {
         currentComboCount = 0; // Resetear combo al cambiar

@@ -99,7 +99,7 @@ public class TortugaController : MonoBehaviour
 
         jumpPressed = Input.GetButtonDown("Jump");
         jumpHeld = Input.GetButton("Jump");
-        runHeld = Input.GetKey(KeyCode.LeftShift);
+        runHeld = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         dashPressed = Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.Space);
         attackPressed = Input.GetButtonDown("Fire1");
 
@@ -172,41 +172,47 @@ public class TortugaController : MonoBehaviour
     // ============================================
    void HandleSwimmingPhysics()
     {
-        // 1. Move
+        // 1. Mover
         if (inputDir.sqrMagnitude > 0.1f)
         {
-            Vector2 targetVel = inputDir * swimSpeed;
+            // --- CORRECCIÓN AQUÍ ---
+            // Calculamos la velocidad final basada en si corres o no
+            float finalSpeed = swimSpeed * (runHeld ? runMultiplier : 1f);
+            
+            // Aplicamos esa velocidad a la dirección
+            Vector2 targetVel = inputDir * finalSpeed;
+
+            // Aplicamos el movimiento suave (Lerp)
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVel, swimAcceleration * Time.fixedDeltaTime);
+            // -----------------------
             
-            // 2. Visual Rotation Logic (The Fix)
+            // 2. Lógica Visual (Rotación)
             
-            // A. FACE LEFT/RIGHT (Using Scale, not Rotation)
+            // A. FACE LEFT/RIGHT (Flip)
             if (Mathf.Abs(inputDir.x) > 0.1f)
             {
                 facing = inputDir.x > 0 ? 1 : -1;
-                UpdateScale(); // Use your existing scale method to flip X
+                UpdateScale(); 
             }
 
-            // B. TILT UP/DOWN (Clamp rotation so it never goes upside down)
-            // We calculate angle based on Y movement, but limit it to +/- 45 degrees
+            // B. TILT UP/DOWN
             float tiltAngle = 0f;
             if (Mathf.Abs(inputDir.y) > 0.1f)
             {
-                // If moving Up, tilt 30 degrees. If Down, tilt -30.
-                // We multiply by 'facing' so the tilt works correctly when facing Left or Right
-                tiltAngle = inputDir.y > 0 ? 40f * facing : -40f * facing;
+                // Inclinación suave al subir o bajar
+                tiltAngle = inputDir.y > 0 ? 55f * facing : -55f * facing;
             }
 
-            // Smoothly rotate to the target tilt
+            // Rotar suavemente
             Quaternion targetRot = Quaternion.Euler(0, 0, tiltAngle);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime);
         }
         else
         {
-            // Decelerate
+            // Desacelerar si no hay input
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, swimAcceleration * Time.fixedDeltaTime);
             
-            // Slowly return to 0 rotation (horizontal) when stopped
+            // Enderezar la tortuga horizontalmente
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, rotationSpeed * Time.fixedDeltaTime);
         }
     }

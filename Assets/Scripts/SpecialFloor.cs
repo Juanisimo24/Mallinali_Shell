@@ -25,6 +25,7 @@ public class SpecialFloor : MonoBehaviour
     [SerializeField] PolygonCollider2D mapBoundry;
     [SerializeField] PolygonCollider2D mapBoundry2;
     CinemachineConfiner2D confiner;
+    [SerializeField]private Animator anim;
     bool upPressed;
 
     bool underWater=false;
@@ -43,8 +44,10 @@ public class SpecialFloor : MonoBehaviour
 
         // Ángulo entre la normal del contacto y el eje vertical
         float angle = Vector2.Angle(normal, Vector2.up);
+        anim.SetBool("Change",true);
         if (manager.GetActive().layer == 7)
         {
+            
             if (angle <= topAngleThreshold)
             {
                 Debug.Log($"ia pls");
@@ -66,6 +69,10 @@ public class SpecialFloor : MonoBehaviour
             }
         }
 
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        anim.SetBool("Change",false);
     }
 
     private void OnHitFromAbove(Collision2D collision, ContactPoint2D contact)

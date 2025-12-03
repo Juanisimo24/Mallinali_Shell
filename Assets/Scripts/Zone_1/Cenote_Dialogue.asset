@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18d8632f44b8d542945b1609738ed6e, type: 3}
+  m_Name: Cenote_Dialogue
+  m_EditorClassIdentifier: 
+  npcName: Cenote Atlmahuiztli
+  npcPortrait: {fileID: -7909697662214958801, guid: cf894cf6054a43545af3700db2ebed6d, type: 3}
+  playerPortrait: {fileID: -331894575702955633, guid: 5e704f51d7d63ca4ead0a276f212deac, type: 3}
+  dialogueLine:
+  - "The air\u2026 changes here. It feels colder. Heavier."
+  - "Yes\u2026 I feel it too. This place\u2026 it knows me."
+  - Knows you? Malinalli, what is this place?
+  - "That sound\u2026 it\u2019s calling to me. Like a memory I\u2019ve forgotten\u2026
+    or tried to forget."
+  - "Cenote Atlmahuiztli\u2026 The Sacred Water of Reverence\u2026"
+  - I carved these glyphs myself, long before the corruption touched this place
+  - "If it\u2019s dangerous, I go with you"
+  - No, warrior. This is a path only I can walk
+  - "But\u2014"
+  - "This water remembers me\u2026 and it calls to me alone. If you entered its depths,
+    the spirits would not know your heart. They may reject you\u2026 or worse"
+  - "Atlmahuiztli\u2026 let me in. Let me remember what I lost"
+  typingSpeed: 0.05
+  autoProgressLine: 0001000000000100010000
+  autoProgressDelay: 1.5

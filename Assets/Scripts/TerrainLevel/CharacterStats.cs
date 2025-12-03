@@ -96,6 +96,16 @@ private SpriteRenderer sr;
             //Destroy(gameObject);
         }
     }
+    
+    public void InstantDeath()
+    {
+        // 1. Bajar la vida a 0 visualmente
+        currentHealth = 0;
+        OnHealthChanged?.Invoke(0, maxHealth);
+
+        // 2. Ejecutar la lógica de muerte existente
+        Die(); 
+    }
 
     // ==========================================
     //              ENERGY LOGIC

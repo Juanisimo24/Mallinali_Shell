@@ -10,6 +10,7 @@ TagManager:
   - Trampilla
   - Tortuga
   - Soul
+  - Follower
   layers:
   - Default
   - TransparentFX
@@ -46,6 +47,30 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 4163988161
+    locked: 0
+  - name: Nubes
+    uniqueID: 2907563689
+    locked: 0
+  - name: Background
+    uniqueID: 1323340387
+    locked: 0
+  - name: Mountain
+    uniqueID: 2174346259
+    locked: 0
+  - name: Hierva
+    uniqueID: 3620332661
+    locked: 0
+  - name: Floor
+    uniqueID: 3724381337
+    locked: 0
+  - name: Characters
+    uniqueID: 1470987975
+    locked: 0
+  - name: Projectiles
+    uniqueID: 4181149345
     locked: 0
   m_RenderingLayers:
   - Default
