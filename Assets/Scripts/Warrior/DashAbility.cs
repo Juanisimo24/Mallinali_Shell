@@ -8,13 +8,17 @@ public class DashAbility : Ability
     public float dashForce = 20f;
     public float dashDuration = 0.2f;
 
-    public override bool Activate(GameObject parent, CharacterStats stats)
+    public override bool Activate(GameObject parent, CharacterStats stats, Animator anim)
     {
         Rigidbody2D rb = parent.GetComponent<Rigidbody2D>();
         SpriteRenderer sr = parent.GetComponent<SpriteRenderer>();
 
         if (rb == null) return false;
 
+        if (anim != null && !string.IsNullOrEmpty(animationTriggerName))
+        {
+            anim.SetTrigger(animationTriggerName);
+        }
         // We need to run a Coroutine to handle the dash duration.
         // Since ScriptableObjects can't run Coroutines, we ask the Parent (Monobehaviour) to run it.
         MonoBehaviour runner = parent.GetComponent<MonoBehaviour>();

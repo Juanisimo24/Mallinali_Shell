@@ -14,6 +14,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] private Image smallPortrait; 
     [SerializeField] private Image companionHealthBarFill; // NUEVO: Barra Pequeña Roja
     [SerializeField] private Image companionEnergyBarFill; // NUEVO: Barra Pequeña Energía
+     [SerializeField] private Image companionBackground; 
 
     [Header("Resources")]
     [SerializeField] private Sprite warriorSprite;
@@ -99,5 +100,20 @@ public class HUDController : MonoBehaviour
     {
         bigPortrait.color = normalColor;
         smallPortrait.color = normalColor;
+    }
+
+    public void SetCompanionVisible(bool visible)
+    {
+        // Asumiendo que smallPortraitFrame es el padre del smallPortrait
+        // Si no tienes referencia al frame, arrástrala o usa smallPortrait.gameObject
+        if (smallPortrait != null)
+        {
+            smallPortrait.gameObject.SetActive(visible);
+            
+            // También ocultar barras pequeñas
+            if(companionHealthBarFill) companionHealthBarFill.transform.parent.gameObject.SetActive(visible);
+            if(companionEnergyBarFill) companionEnergyBarFill.transform.parent.gameObject.SetActive(visible);
+            if(companionEnergyBarFill) companionBackground.transform.parent.gameObject.SetActive(visible);
+        }
     }
 }

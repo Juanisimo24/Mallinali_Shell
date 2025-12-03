@@ -8,21 +8,42 @@ public class PlayerCombat : MonoBehaviour
     public float comboRangeMultiplier = 2.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 10;
+
+    [Header("Cooldown Settings")]
+    [Tooltip("Time in seconds between attacks")]
+    public float attackCooldown = 0.5f; // <--- NEW VARIABLE
+    private float nextAttackTime = 0f;  // <--- NEW VARIABLE
     
+    private Animator animator;
     private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void PerformAttack()
     {
+        // 1. CHECK COOLDOWN
+        // If the current time is less than the allowed time, we exit immediately.
+        if (Time.time < nextAttackTime) return;
+        if (animator != null) animator.SetTrigger("Attack"); 
+        var controller = GetComponent<PlayerController>();
+
+       /* if (controller != null)
+        {
+            StartCoroutine(StopMovementBriefly(controller, 0.3f));
+        }*/
+
+        // 2. SET NEXT ATTACK TIME
+        nextAttackTime = Time.time + attackCooldown;
+
         // animator.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         
-        bool landedHit = false; // Flag to check if we hit at least one enemy
+        bool landedHit = false; 
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -39,32 +60,22 @@ public class PlayerCombat : MonoBehaviour
         }
 
         // --- REPORT TO MANAGER ---
-        // If this is the ACTIVE player and they hit something
         if (landedHit)
         {
-            // Only the Active player generates combo points
-            // We check against the singleton instance
             if (PlayerManagerDual.Instance != null)
             {
-                // Verify if THIS gameObject is the active one before counting the combo
-                // (Prevents the AI from generating combos for itself randomly)
-                /* 
-                   NOTE: If you can't access 'active' publicly, 
-                   you can just call RegisterHit and let Manager decide logic, 
-                   but checking here is cleaner.
-                */
                  PlayerManagerDual.Instance.RegisterHit();
             }
         }
     }
 
-    // This function is called by the Manager when it's YOUR turn to be the companion attacker
+    // This function is called by the Manager (Combo Assist)
+    // Note: We usually DON'T check cooldown here because this is a special event triggered by the Manager.
     public void PerformComboAttack()
     {
         Debug.Log(gameObject.name + " performs Combo Attack!");
         // animator.SetTrigger("ComboAttack");
 
-        // Use a larger range for the Assist attack
         float comboRange = attackRange * comboRangeMultiplier; 
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, comboRange, enemyLayers);
@@ -78,6 +89,17 @@ public class PlayerCombat : MonoBehaviour
                 damageable.TakeDamage(attackDamage * 2, attackPoint.position, hitNormal);
             }
         }
+    }
+
+     System.Collections.IEnumerator StopMovementBriefly(PlayerController ctrl, float duration)
+    {
+        ctrl.SetAbilityOverride(true); // Bloquea inputs
+        // Opcional: Frenar en seco la velocidad
+        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero; 
+        
+        yield return new WaitForSeconds(duration);
+        
+        ctrl.SetAbilityOverride(false); // Libera inputs
     }
 
     void OnDrawGizmosSelected()
